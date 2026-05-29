@@ -1,0 +1,7 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home2/hg3ads37/cotabemnegocios.com.br/
+    - /bin/cp -R index.html $DEPLOYPATH
+    - /bin/cp -R assets $DEPLOYPATH
+    - /bin/cp -R icons $DEPLOYPATH
