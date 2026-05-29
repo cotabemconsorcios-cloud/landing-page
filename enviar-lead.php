@@ -15,7 +15,7 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
 }
 
 // >>> Para onde os leads vão:
-$DESTINO = 'joaoguilhermerodrigues@hotmail.com';
+$DESTINO = 'barretosantosthiago@gmail.com';
 
 // Lê o corpo (JSON enviado pelo fetch do site) com fallback para form-encoded
 $raw  = file_get_contents('php://input');
