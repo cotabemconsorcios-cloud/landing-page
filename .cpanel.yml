@@ -5,3 +5,7 @@ deployment:
     - /bin/cp -R index.html $DEPLOYPATH
     - /bin/cp -R assets $DEPLOYPATH
     - /bin/cp -R icons $DEPLOYPATH
+    - /bin/cp -R enviar-lead.php $DEPLOYPATH
+    - /bin/cp -R robots.txt $DEPLOYPATH
+    - /bin/cp -R sitemap.xml $DEPLOYPATH
+    - /bin/cp -R .htaccess $DEPLOYPATH

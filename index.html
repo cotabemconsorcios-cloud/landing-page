@@ -6,6 +6,32 @@
   <title>Cota Bem | Consórcio com método e planejamento</title>
   <meta name="description" content="Consórcio imobiliário, veículos, frota e pesados com análise consultiva, planejamento de lance e transparência em cada etapa.">
 
+  <!-- SEO -->
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Cota Bem">
+  <meta name="theme-color" content="#000A17">
+  <meta name="keywords" content="consórcio, consórcio imobiliário, consórcio de veículos, consórcio Porto Bank, carta de crédito, simulação de consórcio, consórcio sem juros">
+  <link rel="canonical" href="https://cotabemnegocios.com.br/">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/favicon.svg">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Cota Bem">
+  <meta property="og:title" content="Cota Bem | Consórcio com método e planejamento">
+  <meta property="og:description" content="Consórcio imobiliário, veículos, frota e pesados com análise consultiva, planejamento de lance e transparência em cada etapa.">
+  <meta property="og:url" content="https://cotabemnegocios.com.br/">
+  <meta property="og:image" content="https://cotabemnegocios.com.br/assets/hero-image.webp">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cota Bem | Consórcio com método e planejamento">
+  <meta name="twitter:description" content="Consórcio imobiliário, veículos, frota e pesados com análise consultiva, planejamento de lance e transparência em cada etapa.">
+  <meta name="twitter:image" content="https://cotabemnegocios.com.br/assets/hero-image.webp">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -1505,6 +1531,9 @@
       margin-bottom: 28px;
     }
 
+    /* Alvo do scroll dos botões — compensa o header fixo */
+    #simulador { scroll-margin-top: 96px; }
+
     /* ---------- FOOTER ---------- */
     footer {
       padding: 36px 0;
@@ -1523,26 +1552,12 @@
       font-size: .82rem;
     }
 
-    /* ---------- WHATSAPP FLOAT ---------- */
-    .whatsapp-float {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      z-index: 40;
-      display: grid;
-      place-items: center;
-      width: 60px;
-      height: 60px;
-      color: var(--white);
-      background: var(--green);
-      border-radius: 50%;
-      box-shadow: 0 18px 38px rgba(37, 211, 102, .4);
-      transition: transform .25s ease;
+    .footer-grid small a {
+      color: rgba(255, 255, 255, .8);
+      font-weight: 700;
+      text-decoration: underline;
     }
-
-    .whatsapp-float:hover { transform: scale(1.08); }
-
-    .whatsapp-float svg { width: 30px; height: 30px; fill: currentColor; }
+    .footer-grid small a:hover { color: var(--white); }
 
     /* ---------- RESPONSIVE ---------- */
     @media (min-width: 720px) {
@@ -1714,6 +1729,68 @@
       .nav { min-height: 64px; gap: 12px; }
     }
   </style>
+
+  <!-- Dados estruturados (SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Cota Bem",
+    "url": "https://cotabemnegocios.com.br/",
+    "logo": "https://cotabemnegocios.com.br/assets/logo.png",
+    "description": "Consultoria de consórcio imobiliário, veículos, frota e pesados com análise técnica de grupo, planejamento de lance e transparência. Consórcio administrado pela Porto Bank.",
+    "areaServed": "BR",
+    "knowsAbout": ["Consórcio imobiliário", "Consórcio de veículos", "Consórcio de frota e pesados", "Carta de crédito", "Porto Bank"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Consórcio demora muito para contemplar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Depende do grupo, do prazo, da estratégia de lance e do seu objetivo. A Cota Bem avalia esses pontos antes de indicar um plano, porque tempo de contemplação não deve ser tratado como promessa."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "E se eu não for sorteado no consórcio?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Você continua participando das assembleias e pode usar estratégia de lance. O papel da consultoria é avaliar qual plano dá mais coerência entre prazo, parcela e chance de contemplação."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Consórcio é melhor que financiamento?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Depende do objetivo. Quem precisa do bem imediatamente e tem capacidade de arcar com juros pode preferir o financiamento. Para quem tem prazo, quer preservar caixa e não quer enriquecer banco durante anos, o consórcio costuma ser mais eficiente."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Como funciona a estratégia de lance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O lance é uma antecipação de parcelas para tentar contemplação. A estratégia considera histórico do grupo, valor disponível, prazo desejado e impacto no seu fluxo financeiro."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "A Porto Bank é confiável?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A Porto Bank faz parte de um dos grupos mais conhecidos do mercado brasileiro. Ainda assim, cada contratação deve ser analisada com clareza de regras, taxas, prazos e responsabilidades."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -1733,7 +1810,7 @@
         <a href="#metodo">Método</a>
         <a href="#faq">FAQ</a>
       </nav>
-      <a class="btn btn-primary js-whatsapp" href="#" data-product="atendimento" data-utm-content="header">Simular agora</a>
+      <a class="btn btn-primary" href="#simulador" data-utm-content="header">Simular agora</a>
     </div>
   </header>
 
@@ -1748,7 +1825,7 @@
             <span class="eyebrow">Consórcio sem juros · Porto Bank</span>
             <h1 id="hero-title">Compre imóvel, veículo ou frota sem pagar <span class="accent">juros</span> para o banco.</h1>
             <div class="hero-actions">
-              <a class="btn btn-primary btn-arrow js-whatsapp" href="#" data-product="simulacao" data-utm-content="hero_cta">Descobrir a melhor estratégia</a>
+              <a class="btn btn-primary btn-arrow" href="#simulador" data-utm-content="hero_cta">Descobrir a melhor estratégia</a>
               <a class="btn btn-ghost" href="#metodo">Como funciona</a>
             </div>
           </div>
@@ -1886,7 +1963,7 @@
         </div>
 
         <div style="text-align:center; margin-top:40px;">
-          <a class="btn btn-primary btn-arrow js-whatsapp" href="#" data-product="quem-somos" data-utm-content="compare_cta">Fazer simulação gratuitamente</a>
+          <a class="btn btn-primary btn-arrow" href="#simulador" data-utm-content="compare_cta">Fazer simulação gratuitamente</a>
         </div>
       </div>
     </section>
@@ -1913,7 +1990,7 @@
           <span class="eyebrow">Por que o consórcio cresceu</span>
           <h2 id="megastat-title" style="margin-top:22px;"><span class="accent">1 em cada 3</span> carros no Brasil já é comprado via consórcio.</h2>
           <p>A taxa de administração média de um consórcio fica entre 15% e 20% ao longo de todo o contrato. Em um financiamento bancário, os juros chegam a ultrapassar 100% do valor do bem. Quando você entende essa diferença, a decisão muda.</p>
-          <a class="btn btn-primary btn-arrow js-whatsapp" href="#" data-product="megastat" data-utm-content="megastat_cta">Ver quanto eu pagaria de juros</a>
+          <a class="btn btn-primary btn-arrow" href="#simulador" data-utm-content="megastat_cta">Ver quanto eu pagaria de juros</a>
         </div>
       </div>
 
@@ -1941,7 +2018,7 @@
             <div class="product-body">
               <h3>Consórcio imobiliário</h3>
               <p>Residencial, comercial, terreno ou construção. Com análise de grupo e prazo, você sabe quando vai ter acesso ao crédito antes de assinar.</p>
-              <a class="product-link js-whatsapp" href="#" data-product="Imóvel" data-utm-content="produto_imovel">Simular agora</a>
+              <a class="product-link" href="#simulador" data-utm-content="produto_imovel">Simular agora</a>
             </div>
           </article>
           <article class="product-card">
@@ -1952,7 +2029,7 @@
             <div class="product-body">
               <h3>Consórcio de veículos</h3>
               <p>Leves e utilitários. Você define a faixa de crédito e a Cota Bem analisa o grupo com melhor histórico de contemplação para o seu prazo.</p>
-              <a class="product-link js-whatsapp" href="#" data-product="Veículo" data-utm-content="produto_veiculo">Quero saber mais</a>
+              <a class="product-link" href="#simulador" data-utm-content="produto_veiculo">Quero saber mais</a>
             </div>
           </article>
           <article class="product-card">
@@ -1963,7 +2040,7 @@
             <div class="product-body">
               <h3>Frota e pesados</h3>
               <p>Caminhões, ônibus e máquinas agrícolas. Expansão de capacidade operacional sem retirar dinheiro do capital de giro da empresa.</p>
-              <a class="product-link js-whatsapp" href="#" data-product="Frota e Pesados" data-utm-content="produto_frota">Quero saber mais</a>
+              <a class="product-link" href="#simulador" data-utm-content="produto_frota">Quero saber mais</a>
             </div>
           </article>
         </div>
@@ -2016,7 +2093,7 @@
           </article>
         </div>
         <div class="method-cta">
-          <a class="btn btn-primary btn-arrow js-whatsapp" href="#" data-product="metodo" data-utm-content="metodo_cta">Fazer simulação gratuitamente</a>
+          <a class="btn btn-primary btn-arrow" href="#simulador" data-utm-content="metodo_cta">Fazer simulação gratuitamente</a>
         </div>
       </div>
     </section>
@@ -2086,7 +2163,7 @@
               Administradora líder em consórcio de bens
             </li>
           </ul>
-          <a class="btn btn-primary btn-arrow js-whatsapp" href="#" data-product="porto" data-utm-content="porto_cta">Fazer simulação gratuitamente</a>
+          <a class="btn btn-primary btn-arrow" href="#simulador" data-utm-content="porto_cta">Fazer simulação gratuitamente</a>
         </div>
         <div class="porto-img-wrap">
           <img
@@ -2139,7 +2216,6 @@
           <span class="eyebrow">Próximo passo</span>
           <h2 id="cta-title" style="margin-top:22px;">Quer saber se o consórcio faz sentido para o que você quer <span class="accent">comprar?</span></h2>
           <p>Uma conversa de 15 minutos é suficiente para entender grupo, prazo e estratégia de lance. Sem pressão, sem compromisso de compra.</p>
-          <a class="btn btn-primary btn-arrow js-whatsapp" href="#" data-product="simulacao-final" data-utm-content="cta_final">Fazer simulação gratuitamente</a>
         </div>
 
         <!-- SIMULADOR INTERATIVO -->
@@ -2206,6 +2282,10 @@
             <div class="sim-field">
               <input type="email" id="sim-email" placeholder="Seu e-mail" autocomplete="email">
             </div>
+            <!-- Honeypot anti-spam: invisível para humanos, robôs tendem a preencher -->
+            <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">
+              <input type="text" id="sim-website" name="website" tabindex="-1" autocomplete="off">
+            </div>
             <div class="sim-lgpd-field">
               <input type="checkbox" id="sim-lgpd">
               <label for="sim-lgpd">Autorizo o contato da Cota Bem e o tratamento dos meus dados conforme a <a href="#">Política de Privacidade</a>.</label>
@@ -2252,21 +2332,11 @@
           loading="lazy"
         >
       </a>
-      <small>Consórcio com planejamento, método e transparência. CNPJ 00.000.000/0000-00.</small>
+      <small>Consórcio com planejamento, método e transparência. Desenvolvido por <a href="https://3ads.com.br/" target="_blank" rel="noopener noreferrer">3ADS</a>.</small>
     </div>
   </footer>
 
-  <!-- Botão flutuante WhatsApp -->
-  <a class="whatsapp-float js-whatsapp" href="#" aria-label="Falar com a Cota Bem no WhatsApp" data-product="botao-flutuante" data-utm-content="floating_whatsapp">
-    <svg viewBox="0 0 32 32" aria-hidden="true">
-      <path d="M16.01 3.2A12.73 12.73 0 0 0 5.24 22.7L3.6 28.8l6.25-1.62A12.74 12.74 0 1 0 16.01 3.2Zm0 23.17c-2.04 0-4.02-.6-5.71-1.72l-.41-.27-3.7.96.99-3.6-.29-.43a10.43 10.43 0 1 1 9.12 5.06Zm5.72-7.8c-.31-.16-1.84-.91-2.13-1.01-.29-.11-.5-.16-.71.16-.21.31-.82 1.01-1 1.22-.18.21-.37.24-.68.08-.31-.16-1.31-.48-2.5-1.54-.92-.82-1.55-1.84-1.73-2.15-.18-.31-.02-.48.14-.64.14-.14.31-.37.47-.55.16-.18.21-.31.31-.52.11-.21.05-.39-.03-.55-.08-.16-.71-1.7-.97-2.33-.26-.61-.52-.53-.71-.54h-.61c-.21 0-.55.08-.84.39-.29.31-1.1 1.08-1.1 2.62s1.13 3.04 1.28 3.25c.16.21 2.22 3.39 5.38 4.75.75.32 1.34.52 1.8.66.76.24 1.45.21 1.99.13.61-.09 1.84-.75 2.1-1.48.26-.73.26-1.35.18-1.48-.08-.13-.29-.21-.61-.37Z"></path>
-    </svg>
-  </a>
-
   <script>
-    const WHATSAPP_NUMBER = "5500000000000";
-    const BASE_MESSAGE = "Olá! Quero entender se o consórcio faz sentido para o que estou planejando comprar. Pode me ajudar com uma simulação?";
-
     function currentUtm(content) {
       const params = new URLSearchParams(window.location.search);
       const source = params.get("utm_source") || "site";
@@ -2274,19 +2344,6 @@
       const campaign = params.get("utm_campaign") || "cotabem";
       return `utm_source=${source}; utm_medium=${medium}; utm_campaign=${campaign}; utm_content=${content || "cta"}`;
     }
-
-    function whatsappUrl(message, content) {
-      const text = `${message}\n\nRastreamento: ${currentUtm(content)}`;
-      return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
-    }
-
-    document.querySelectorAll(".js-whatsapp").forEach((link) => {
-      link.addEventListener("click", (event) => {
-        event.preventDefault();
-        if (window.fbq) fbq("trackCustom", "WhatsAppClick", { content: link.dataset.utmContent || "cta" });
-        window.open(whatsappUrl(BASE_MESSAGE, link.dataset.utmContent), "_blank", "noopener");
-      });
-    });
 
     // ---- SCROLL REVEAL ANIMATIONS ----
     (function () {
@@ -2533,18 +2590,16 @@
       if (btnVoltar) btnVoltar.addEventListener("click", function () { showSimStep(1); });
 
       // -------- ENVIO DO LEAD --------
-      // TODO (dev): plugar aqui o destino real do lead (webhook, Google Sheets via Apps Script,
-      // RD Station, HubSpot, ou e-mail via API tipo Formspree/Resend). Hoje só registra no console.
+      // Envia o lead para enviar-lead.php, que encaminha por e-mail.
+      // Resolve sempre (mesmo em falha) para não travar a experiência do usuário.
       function enviarLead(lead) {
-        return new Promise(function (resolve) {
-          console.log("[LEAD CAPTURADO]", lead);
-          // Exemplo de integração futura:
-          // return fetch("https://script.google.com/macros/s/XXX/exec", {
-          //   method: "POST",
-          //   body: JSON.stringify(lead)
-          // }).then(resolve);
-          setTimeout(resolve, 300); // simula latência
-        });
+        return fetch("enviar-lead.php", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(lead)
+        })
+        .then(function (r) { return r.json().catch(function () { return {}; }); })
+        .catch(function (err) { console.warn("Falha ao enviar lead:", err); return {}; });
       }
 
       var btnEnviar = document.getElementById("sim-btn-enviar");
@@ -2578,6 +2633,7 @@
             origem: "simulador-site",
             campanha: "porto-bank-maio-2026",
             utm: currentUtm("simulador_final"),
+            website: (document.getElementById("sim-website") || {}).value || "",
             timestamp: new Date().toISOString()
           };
 

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /enviar-lead.php
+
+Sitemap: https://cotabemnegocios.com.br/sitemap.xml
