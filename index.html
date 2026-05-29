@@ -1,0 +1,2623 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cota Bem | Consórcio com método e planejamento</title>
+  <meta name="description" content="Consórcio imobiliário, veículos, frota e pesados com análise consultiva, planejamento de lance e transparência em cada etapa.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+    (window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'META_PIXEL_ID');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=META_PIXEL_ID&ev=PageView&noscript=1" alt=""></noscript>
+
+  <style>
+    :root {
+      --navy-900: #0B1638;
+      --navy-800: #0F1D45;
+      --navy-700: #132455;
+      --navy-600: #1B2F5F;
+      --blue: #2E4A9E;
+      --accent-blue: #3660DD;
+      --yellow: #F5F350;
+      --yellow-soft: #FFD740;
+      --light: #F4F6FB;
+      --white: #FFFFFF;
+      --ink: #0B1638;
+      --muted: #6B748A;
+      --line: #E3E7F1;
+      --green: #25D366;
+      --shadow-sm: 0 6px 18px rgba(11, 22, 56, .08);
+      --shadow-md: 0 20px 50px rgba(11, 22, 56, .14);
+      --shadow-lg: 0 30px 80px rgba(11, 22, 56, .22);
+      --radius: 20px;
+      --radius-lg: 32px;
+      --radius-pill: 999px;
+      --max: 1200px;
+
+      /* Dark section gradient — luz radial vindo do topo */
+      --dark-gradient: radial-gradient(76.31% 76.31% at 50% 14.98%, #04234D 0%, #000A17 100%);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--white);
+      font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-weight: 500;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    img { display: block; max-width: 100%; }
+
+    a { color: inherit; text-decoration: none; }
+
+    button, input, select { font: inherit; }
+
+    h1, h2, h3, h4, p { margin: 0; }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin-inline: auto;
+    }
+
+    /* ---------- HEADER ---------- */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: #000A17;
+      border-bottom: 1px solid rgba(255, 255, 255, .06);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      min-height: 76px;
+    }
+
+    .brand-logo {
+      display: block;
+      height: 40px;
+      width: auto;
+      max-width: none;
+      flex-shrink: 0;
+    }
+
+    /* Garante que o link da logo não encolha no flex do header */
+    .site-header .nav > a:first-child {
+      display: inline-flex;
+      flex-shrink: 0;
+    }
+
+    .footer-logo {
+      display: block;
+      height: 44px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 28px;
+      color: rgba(255, 255, 255, .8);
+      font-size: .92rem;
+      font-weight: 500;
+    }
+
+    .nav-links a { transition: color .2s ease; }
+    .nav-links a:hover { color: var(--white); }
+
+    /* ---------- BUTTONS ---------- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 50px;
+      padding: 14px 24px;
+      border: 0;
+      border-radius: var(--radius-pill);
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 700;
+      font-size: .95rem;
+      letter-spacing: -.01em;
+      text-align: center;
+      transition: transform .2s ease, box-shadow .25s ease, background .2s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      background: var(--yellow);
+      color: var(--navy-900);
+      box-shadow: 0 14px 32px rgba(245, 197, 24, .35);
+    }
+
+    .btn-primary:hover {
+      background: var(--yellow-soft);
+      box-shadow: 0 18px 38px rgba(245, 197, 24, .45);
+    }
+
+    .btn-secondary {
+      background: var(--white);
+      color: var(--navy-900);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-ghost {
+      background: rgba(255, 255, 255, .08);
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, .18);
+    }
+
+    .btn-ghost:hover { background: rgba(255, 255, 255, .14); }
+
+    .btn-dark {
+      background: var(--navy-900);
+      color: var(--white);
+    }
+
+    .btn-dark:hover { background: var(--navy-700); }
+
+    .btn-arrow::after {
+      content: "→";
+      font-weight: 700;
+      transition: transform .2s ease;
+    }
+
+    .btn-arrow:hover::after { transform: translateX(3px); }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: var(--white);
+      background: var(--dark-gradient);
+      /* espaço reservado para a divisória absoluta no fundo (156/1920 ≈ 8.125%) */
+      padding-bottom: 8.125%;
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 48px;
+      padding: 32px 0 40px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      color: var(--white);
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid rgba(255, 255, 255, .14);
+      border-radius: var(--radius-pill);
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: var(--yellow);
+      border-radius: 50%;
+      box-shadow: 0 0 0 4px rgba(245, 197, 24, .2);
+    }
+
+    .hero h1 {
+      max-width: 720px;
+      margin: 22px 0 20px;
+      font-size: clamp(2rem, 5vw, 3.8rem);
+      font-weight: 500;
+      line-height: 1.02;
+      letter-spacing: -.025em;
+    }
+
+    .hero h1 .accent {
+      color: var(--yellow);
+      font-weight: 800;
+    }
+
+    .hero-copy {
+      max-width: 540px;
+      margin-bottom: 32px;
+      color: rgba(255, 255, 255, .72);
+      font-size: 1.08rem;
+      font-weight: 500;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 38px;
+    }
+
+    /* Hero visual — coluna da imagem */
+    .hero-col-visual {
+      display: none;
+    }
+
+    .hero-car-img {
+      width: 100%;
+      height: auto;
+      max-height: 520px;
+      object-fit: contain;
+      object-position: bottom center;
+      display: block;
+    }
+
+    /* ---------- HERO STATS ---------- */
+    .hero-stats {
+      position: relative;
+      z-index: 3;
+      display: grid;
+      gap: 14px;
+      margin-top: 0;
+      padding-top: 28px;
+      padding-bottom: 40px;
+      border-top: 1px solid rgba(255, 255, 255, .12);
+    }
+
+    .hero-stat {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 20px;
+      background: rgba(255, 255, 255, .045);
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: var(--radius);
+      backdrop-filter: blur(6px);
+    }
+
+    .hero-stat-icon {
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      width: 48px;
+      height: 48px;
+      background: var(--yellow);
+      color: var(--navy-900);
+      border-radius: 14px;
+    }
+
+    .hero-stat-icon svg { width: 24px; height: 24px; }
+
+    .hero-stat-text strong {
+      display: block;
+      color: var(--white);
+      font-size: 1.7rem;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -.02em;
+    }
+
+    .hero-stat-text span {
+      display: block;
+      margin-top: 5px;
+      color: rgba(255, 255, 255, .68);
+      font-size: .85rem;
+      font-weight: 500;
+    }
+
+    /* Hero wave divider (Union) */
+    .hero-wave {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      line-height: 0;
+      z-index: 2;
+    }
+    .hero-wave img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ---------- SECTIONS BASE ---------- */
+    section { padding: 80px 0; }
+
+    .section-light { background: var(--light); }
+    .section-dark  { color: var(--white); background: var(--dark-gradient); position: relative; overflow: hidden; }
+    .section-navy  { color: var(--white); background: var(--dark-gradient); position: relative; overflow: hidden; }
+
+    .section-head {
+      display: grid;
+      gap: 14px;
+      max-width: 760px;
+      margin-bottom: 48px;
+    }
+
+    .section-head.center {
+      margin-inline: auto;
+      text-align: center;
+      justify-items: center;
+    }
+
+    .section-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--blue);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .section-kicker::before {
+      content: "";
+      width: 24px;
+      height: 2px;
+      background: currentColor;
+    }
+
+    .section-dark .section-kicker,
+    .section-navy .section-kicker { color: var(--yellow); }
+
+    .section-head h2 {
+      color: var(--navy-900);
+      font-size: clamp(1.9rem, 4.5vw, 3.2rem);
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -.025em;
+    }
+
+    .section-head h2 .accent {
+      color: var(--accent-blue);
+      font-weight: 800;
+    }
+
+    .section-dark .section-head h2,
+    .section-navy .section-head h2 { color: var(--white); }
+
+    .section-dark .section-head h2 .accent,
+    .section-navy .section-head h2 .accent { color: var(--yellow); }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      font-weight: 500;
+    }
+
+    .section-dark .section-head p,
+    .section-navy .section-head p { color: rgba(255, 255, 255, .72); }
+
+    /* Section divider images */
+    .section-divider-top {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-bottom: 0;
+      line-height: 0;
+    }
+    .section-divider-top img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ---------- LEAD FORM ---------- */
+    .lead-form {
+      padding: 28px;
+      background: var(--white);
+      color: var(--ink);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .lead-form .form-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .lead-form .form-icon {
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      background: rgba(245, 197, 24, .18);
+      color: var(--navy-900);
+      border-radius: 14px;
+      font-size: 1.2rem;
+    }
+
+    .lead-form h3 {
+      color: var(--navy-900);
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: -.01em;
+    }
+
+    .lead-form .form-sub { color: var(--muted); font-size: .88rem; }
+
+    .form-grid { display: grid; gap: 14px; }
+
+    .field label {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--navy-900);
+      font-size: .8rem;
+      font-weight: 700;
+    }
+
+    .field input,
+    .field select {
+      width: 100%;
+      min-height: 50px;
+      padding: 12px 16px;
+      color: var(--ink);
+      background: #F7F9FD;
+      border: 1.5px solid var(--line);
+      border-radius: 14px;
+      font-weight: 500;
+      outline: none;
+      transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .field input:focus,
+    .field select:focus {
+      border-color: var(--blue);
+      background: var(--white);
+      box-shadow: 0 0 0 4px rgba(46, 74, 158, .12);
+    }
+
+    .form-foot { margin-top: 14px; color: var(--muted); font-size: .78rem; }
+
+    /* ---------- SIMULADOR ---------- */
+    .simulator-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      padding: 32px;
+      position: relative;
+      overflow: hidden;
+      color: var(--ink);
+    }
+    .sim-badge {
+      position: absolute;
+      top: 28px; right: -34px;
+      width: 140px;
+      background: #D32F2F;
+      color: white;
+      text-align: center;
+      font-size: .7rem;
+      font-weight: 800;
+      padding: 7px 0;
+      transform: rotate(45deg);
+      letter-spacing: .05em;
+      pointer-events: none;
+      z-index: 2;
+    }
+    .sim-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--navy-900);
+      text-align: center;
+      margin: 0 0 6px;
+      letter-spacing: -.01em;
+      line-height: 1.3;
+      padding-right: 24px;
+    }
+    .sim-title span { color: var(--accent-blue); }
+    .sim-subtitle {
+      text-align: center;
+      color: var(--accent-blue);
+      font-size: .88rem;
+      font-weight: 600;
+      margin: 0 0 16px;
+    }
+    .sim-toggle-group {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+    .sim-toggle {
+      flex: 1;
+      min-width: 76px;
+      padding: 10px 8px;
+      border: 1.5px solid var(--line);
+      border-radius: var(--radius-pill);
+      background: var(--light);
+      color: var(--navy-900);
+      font-family: inherit;
+      font-weight: 600;
+      font-size: .88rem;
+      cursor: pointer;
+      transition: background .18s, border-color .18s, color .18s;
+      text-align: center;
+    }
+    .sim-toggle.is-active {
+      background: var(--accent-blue);
+      border-color: var(--accent-blue);
+      color: var(--white);
+    }
+    .sim-section-label {
+      font-size: .88rem;
+      font-weight: 700;
+      color: var(--navy-900);
+      margin: 0 0 10px;
+    }
+    .sim-value-display {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: var(--navy-900);
+      text-align: center;
+      letter-spacing: -.025em;
+      margin-bottom: 12px;
+    }
+    .sim-range {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 4px;
+      border-radius: 2px;
+      cursor: pointer;
+      display: block;
+      outline: none;
+    }
+    .sim-range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      background: var(--accent-blue);
+      border: 3px solid white;
+      box-shadow: 0 2px 8px rgba(54,96,221,.35);
+      cursor: pointer;
+    }
+    .sim-range-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: .75rem;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+    .sim-slider-wrap { margin-bottom: 18px; }
+    .sim-error {
+      text-align: center;
+      color: #E53935;
+      font-size: .84rem;
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+    .sim-btn-primary {
+      width: 100%;
+      padding: 16px;
+      background: var(--accent-blue);
+      color: white;
+      border: none;
+      border-radius: var(--radius-pill);
+      font-family: inherit;
+      font-size: .92rem;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: opacity .2s;
+      display: block;
+      margin-bottom: 10px;
+    }
+    .sim-btn-primary:hover { opacity: .88; }
+    .sim-note { text-align: center; font-size: .78rem; color: var(--muted); margin: 0; }
+    .sim-field { margin-bottom: 12px; }
+    .sim-field input[type="text"],
+    .sim-field input[type="tel"],
+    .sim-field input[type="email"] {
+      width: 100%;
+      min-height: 50px;
+      padding: 12px 16px;
+      border: 1.5px solid var(--line);
+      border-radius: 14px;
+      font-family: inherit;
+      font-size: .9rem;
+      color: var(--ink);
+      background: var(--light);
+      outline: none;
+      transition: border-color .18s;
+      box-sizing: border-box;
+    }
+    .sim-field input[type="text"]:focus,
+    .sim-field input[type="tel"]:focus,
+    .sim-field input[type="email"]:focus { border-color: var(--accent-blue); }
+
+    /* Bloco LGPD (checkbox + label) */
+    .sim-lgpd-field {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: .74rem;
+      color: var(--muted);
+      line-height: 1.45;
+      margin-bottom: 14px;
+    }
+    .sim-lgpd-field input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      margin: 2px 0 0;
+      flex-shrink: 0;
+      accent-color: var(--accent-blue);
+      cursor: pointer;
+    }
+    .sim-lgpd-field label { cursor: pointer; }
+    .sim-lgpd-field a { color: var(--accent-blue); text-decoration: underline; }
+    .sim-btn-back {
+      background: none;
+      border: none;
+      color: var(--muted);
+      font-family: inherit;
+      font-size: .88rem;
+      cursor: pointer;
+      display: block;
+      margin: 8px auto 0;
+      text-decoration: underline;
+    }
+    .sim-success-wrap { text-align: center; }
+    .sim-check-icon {
+      width: 60px; height: 60px;
+      border: 3px solid #22C55E;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #22C55E;
+      font-size: 1.6rem;
+      margin: 0 auto 16px;
+    }
+    .sim-success-title { font-size: 1.1rem; font-weight: 800; color: var(--navy-900); margin: 0 0 8px; }
+    .sim-success-title span { color: #22C55E; }
+    .sim-success-text { font-size: .88rem; color: var(--muted); margin-bottom: 20px; }
+    .sim-parcela-box {
+      background: var(--light);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .sim-parcela-label { font-size: .82rem; color: var(--muted); margin: 0 0 6px; }
+    .sim-parcela-original { font-size: .95rem; color: var(--muted); text-decoration: line-through; margin: 0 0 2px; }
+    .sim-parcela-final { font-size: 1.7rem; font-weight: 800; color: var(--accent-blue); letter-spacing: -.025em; margin: 0; }
+    .sim-btn-secondary {
+      width: 100%;
+      padding: 14px;
+      background: white;
+      color: var(--accent-blue);
+      border: 2px solid var(--accent-blue);
+      border-radius: var(--radius-pill);
+      font-family: inherit;
+      font-size: .9rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all .2s;
+    }
+    .sim-btn-secondary:hover { background: var(--accent-blue); color: white; }
+
+    /* Override final-cta p (branco) — especificidade dupla para ganhar da regra geral */
+    .final-cta .simulator-card p { color: var(--ink); max-width: none; margin-bottom: 0; font-size: inherit; }
+
+    /* Hierarquia tipográfica do simulador */
+    /* 1. Título — maior peso */
+    .final-cta .simulator-card .sim-title {
+      font-size: 1.22rem;
+      font-weight: 800;
+      color: var(--navy-900);
+      line-height: 1.25;
+    }
+    /* 2. Labels/descrições — menor, mais leve */
+    .final-cta .simulator-card .sim-subtitle,
+    .final-cta .simulator-card .sim-section-label {
+      font-size: .78rem;
+      font-weight: 500;
+      color: var(--muted);
+      text-align: left;
+      margin-bottom: 10px;
+    }
+    /* 3. Valor escolhido — grande e bold */
+    .final-cta .simulator-card .sim-value-display {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--navy-900);
+      letter-spacing: -.03em;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    /* 4. Nota rodapé — discreta */
+    .final-cta .simulator-card .sim-note {
+      font-size: .74rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    /* Slider embaçado enquanto tipos não selecionados */
+    .sim-slider-wrap.is-blurred {
+      filter: blur(3px);
+      opacity: 0.55;
+      pointer-events: none;
+      user-select: none;
+      transition: filter .3s, opacity .3s;
+    }
+    .sim-slider-wrap { transition: filter .3s, opacity .3s; }
+
+    /* Prévia bloqueada — aparece no step 2 (antes do form revelar) */
+    .sim-preview-locked {
+      position: relative;
+      background: linear-gradient(135deg, rgba(54,96,221,.06), rgba(245,243,80,.06));
+      border: 1px dashed var(--line);
+      border-radius: 16px;
+      padding: 16px 16px 14px;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+    .sim-preview-label {
+      font-size: .76rem;
+      color: var(--muted);
+      margin: 0 0 6px;
+    }
+    .sim-preview-value-wrap {
+      position: relative;
+      display: inline-block;
+    }
+    .sim-preview-value {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--accent-blue);
+      letter-spacing: -.025em;
+      filter: blur(8px);
+      user-select: none;
+    }
+    .sim-preview-lock {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+    .sim-preview-hint {
+      font-size: .74rem;
+      color: var(--muted);
+      margin: 6px 0 0;
+    }
+
+    /* Resumo da simulação no step 2 */
+    .sim-resumo {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: .78rem;
+      color: var(--muted);
+      padding: 8px 0 12px;
+      border-top: 1px solid var(--line);
+      margin-top: 12px;
+    }
+    .sim-resumo strong { color: var(--navy-900); font-weight: 600; }
+
+    /* Condições da campanha no resultado revelado */
+    .sim-condicoes {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      font-size: .78rem;
+      color: var(--muted);
+      text-align: left;
+      line-height: 1.6;
+    }
+    .sim-condicoes-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 2px;
+    }
+    .sim-condicoes-row strong {
+      color: var(--navy-900);
+      font-weight: 600;
+    }
+    .sim-disclaimer {
+      font-size: .68rem;
+      color: var(--muted);
+      margin-top: 10px;
+      line-height: 1.5;
+      opacity: .85;
+    }
+
+    /* ---------- CONTRAST ---------- */
+    .contrast-wrap {
+      display: grid;
+      gap: 24px;
+      align-items: start;
+    }
+
+    /* ---------- COMPARE (Quem somos) ---------- */
+    .compare-section {
+      position: relative;
+      overflow: hidden;
+      background: var(--light);
+    }
+
+    .compare-section::before { display: none; }
+
+    .compare-section::after { display: none; }
+
+    .compare-section .container { position: relative; z-index: 1; }
+
+    .compare-head {
+      max-width: 760px;
+      margin: 0 auto 48px;
+      display: grid;
+      gap: 14px;
+      text-align: center;
+      justify-items: center;
+    }
+
+    .compare-head h2 {
+      color: var(--navy-900);
+      font-size: clamp(1.9rem, 4.5vw, 3.1rem);
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -.025em;
+    }
+
+    .compare-head h2 .accent {
+      color: var(--accent-blue);
+      font-weight: 800;
+    }
+
+    .compare-head p {
+      max-width: 580px;
+      color: var(--muted);
+      font-size: 1.02rem;
+      font-weight: 500;
+    }
+
+    .compare-board {
+      position: relative;
+      display: grid;
+      gap: 22px;
+    }
+
+    .compare-card {
+      position: relative;
+      display: grid;
+      gap: 22px;
+      padding: 34px 30px;
+      border-radius: var(--radius-lg);
+      background: var(--white);
+      border: 1.5px solid var(--line);
+    }
+
+    .compare-card-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: max-content;
+      padding: 7px 14px;
+      border-radius: var(--radius-pill);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .compare-card-tag::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+
+    .compare-card h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: -.015em;
+    }
+
+    .compare-card.is-market {
+      background: #F4F6FB;
+      border-color: #E3E7F1;
+    }
+
+    .compare-card.is-market .compare-card-tag {
+      color: #8A93A7;
+      background: rgba(138, 147, 167, .14);
+    }
+
+    .compare-card.is-market h3 { color: #4B556B; font-weight: 700; }
+
+    .compare-card.is-cotabem {
+      background: var(--navy-900);
+      color: var(--white);
+      border-color: var(--navy-900);
+      box-shadow: 0 32px 70px rgba(20, 33, 65, .22);
+    }
+
+    .compare-card.is-cotabem .compare-card-tag {
+      color: var(--navy-900);
+      background: var(--yellow);
+    }
+
+    .compare-card.is-cotabem h3 { color: var(--white); }
+
+    .compare-list {
+      display: grid;
+      gap: 18px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .compare-item {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+
+    .compare-item-icon {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 11px;
+      font-size: 1rem;
+      font-weight: 800;
+      margin-top: 1px;
+    }
+
+    .compare-card.is-market .compare-item-icon {
+      color: #C25A6C;
+      background: rgba(194, 90, 108, .14);
+    }
+
+    .compare-card.is-cotabem .compare-item-icon {
+      color: var(--navy-900);
+      background: var(--yellow);
+    }
+
+    .compare-item-title {
+      display: block;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -.005em;
+      margin-bottom: 3px;
+    }
+
+    .compare-card.is-market .compare-item-title { color: #2E3853; }
+    .compare-card.is-cotabem .compare-item-title { color: var(--white); }
+
+    .compare-item-sub {
+      display: block;
+      font-size: .88rem;
+      font-weight: 500;
+      line-height: 1.45;
+    }
+
+    .compare-card.is-market .compare-item-sub { color: #7C8294; }
+    .compare-card.is-cotabem .compare-item-sub { color: rgba(255, 255, 255, .68); }
+
+    .compare-vs {
+      display: grid;
+      place-items: center;
+      width: 62px;
+      height: 62px;
+      background: var(--navy-900);
+      color: var(--yellow);
+      border-radius: 50%;
+      font-size: .88rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      box-shadow: 0 12px 28px rgba(20, 33, 65, .32);
+      border: 4px solid var(--light);
+      margin: -10px auto;
+      z-index: 2;
+    }
+
+    .compare-footer {
+      margin-top: 36px;
+      display: grid;
+      gap: 18px;
+      padding: 24px 28px;
+      background: var(--white);
+      border: 1.5px solid var(--line);
+      border-left: 4px solid var(--yellow);
+      border-radius: var(--radius);
+      align-items: center;
+    }
+
+    .compare-footer-text strong {
+      display: block;
+      color: var(--navy-900);
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: -.01em;
+    }
+
+    .compare-footer-text span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: .92rem;
+      font-weight: 500;
+    }
+
+    /* ---------- PRODUCTS ---------- */
+    .products { display: grid; gap: 22px; }
+
+    .product-card {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+
+
+    .product-image {
+      position: relative;
+      aspect-ratio: 16 / 11;
+      overflow: hidden;
+      background: var(--navy-800);
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .5s ease;
+    }
+
+
+    .product-tag {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      padding: 6px 12px;
+      background: var(--yellow);
+      color: var(--navy-900);
+      border-radius: var(--radius-pill);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .product-body { padding: 26px; display: grid; gap: 14px; }
+
+    .product-body h3 {
+      color: var(--navy-900);
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: -.02em;
+    }
+
+    .product-body p { color: var(--muted); font-size: .96rem; }
+
+    .product-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--navy-900);
+      font-weight: 700;
+      font-size: .92rem;
+    }
+
+    .product-link::after { content: "→"; transition: transform .2s ease; }
+    .product-link:hover::after { transform: translateX(4px); }
+
+    /* Products section — decorative vectors */
+    .products-wrapper {
+      position: relative;
+    }
+
+    /* ---------- BIG STAT BLOCK (megastat) ---------- */
+    .megastat {
+      position: relative;
+      overflow: hidden;
+      /* padding: reserva espaço para divisórias (8.125%) + 80px extra de respiro interno */
+      padding: calc(8.125% + 80px) 0;
+      background: var(--dark-gradient);
+      color: var(--white);
+    }
+
+    .megastat-top-divider,
+    .megastat-bottom-divider {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      line-height: 0;
+      z-index: 2;
+    }
+    .megastat-top-divider { top: -2px; }
+    .megastat-bottom-divider { bottom: -2px; }
+
+    .megastat-top-divider img,
+    .megastat-bottom-divider img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .megastat-grid {
+      display: grid;
+      gap: 48px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Megastat visual — só a imagem, sem blob amarelo */
+    .megastat-visual {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+    }
+
+    .megastat-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .megastat h2 {
+      font-size: clamp(2.2rem, 5.5vw, 4rem);
+      font-weight: 500;
+      line-height: 1.02;
+      letter-spacing: -.025em;
+      margin-bottom: 18px;
+    }
+
+    .megastat h2 .accent {
+      color: var(--yellow);
+      font-weight: 800;
+    }
+
+    .megastat p {
+      max-width: 460px;
+      margin-bottom: 28px;
+      color: rgba(255, 255, 255, .72);
+      font-size: 1.08rem;
+    }
+
+    /* ---------- FEATURES (centrado, Figma) ---------- */
+    .method-centered {
+      text-align: center;
+    }
+
+    .method-centered .section-head {
+      margin-inline: auto;
+      text-align: center;
+      justify-items: center;
+      max-width: 840px;
+    }
+
+    .method-centered .section-head p {
+      max-width: 560px;
+      margin-inline: auto;
+    }
+
+    .method-cta {
+      text-align: center;
+      margin-top: 48px;
+    }
+
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .feature-card {
+      flex: 0 0 100%;
+      text-align: left;
+      padding: 26px;
+      background: var(--white);
+      border: 1.5px solid var(--line);
+      border-radius: var(--radius);
+      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+    }
+
+
+    .feature-icon {
+      display: inline-grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      background: rgba(245, 197, 24, .2);
+      color: var(--navy-900);
+      border-radius: 14px;
+      margin-bottom: 18px;
+    }
+
+    .feature-icon svg { width: 24px; height: 24px; }
+
+    .feature-card h3 {
+      margin-bottom: 8px;
+      color: var(--navy-900);
+      font-size: 1.08rem;
+      font-weight: 800;
+      letter-spacing: -.01em;
+    }
+
+    .feature-card p { color: var(--muted); font-size: .94rem; }
+
+    /* ---------- TIMELINE (Como funciona) ---------- */
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 36px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: tl;
+      z-index: 1;
+    }
+
+    .timeline-step {
+      position: relative;
+      counter-increment: tl;
+      padding-left: 88px;
+    }
+
+    .timeline-icon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      display: grid;
+      place-items: center;
+      width: 64px;
+      height: 64px;
+      background: var(--yellow);
+      color: var(--navy-900);
+      border-radius: 50%;
+      border: 4px solid #000A17;
+      box-shadow: 0 0 0 4px rgba(245, 197, 24, .14);
+    }
+
+    .timeline-icon svg { width: 26px; height: 26px; }
+
+    .timeline-label {
+      display: inline-block;
+      padding: 5px 12px;
+      margin-bottom: 10px;
+      background: rgba(245, 197, 24, .14);
+      color: var(--yellow);
+      border-radius: var(--radius-pill);
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .timeline-label::before { content: "Passo " counter(tl, decimal-leading-zero); }
+
+    .timeline-step h3 {
+      margin-bottom: 8px;
+      color: var(--white);
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: -.01em;
+    }
+
+    .timeline-step p { color: rgba(255, 255, 255, .68); font-size: .94rem; }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 32px;
+      bottom: 32px;
+      left: 31px;
+      width: 2px;
+      background-image: linear-gradient(to bottom, rgba(245, 197, 24, .45) 50%, transparent 50%);
+      background-size: 2px 10px;
+      background-repeat: repeat-y;
+      z-index: 1;
+    }
+
+    /* ---------- PORTO BANK SECTION ---------- */
+    .porto-section { background: var(--white); }
+
+    .porto-grid { display: grid; gap: 48px; align-items: center; }
+
+    .porto-badges {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      margin: 26px 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .porto-badges li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 18px;
+      background: rgba(54, 96, 221, .06);
+      border-radius: 14px;
+      font-weight: 700;
+      color: var(--navy-900);
+      font-size: .95rem;
+    }
+
+    .porto-badges li svg {
+      flex: 0 0 auto;
+      width: 22px;
+      height: 22px;
+      color: var(--white);
+      background: var(--accent-blue);
+      border-radius: 50%;
+      padding: 4px;
+    }
+
+    /* Porto Bank — botão com largura natural */
+    .porto-section .btn {
+      width: fit-content;
+      align-self: flex-start;
+    }
+
+    /* Porto Bank — imagem real (assets/image-portobank.webp) */
+    .porto-img-wrap {
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+    }
+
+    .porto-img {
+      width: 100%;
+      max-width: 100%;
+      height: clamp(340px, 50vw, 620px);
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      border-radius: 20px;
+    }
+
+    /* ---------- FAQ ---------- */
+    .faq-list { display: grid; gap: 12px; }
+
+    details {
+      background: var(--white);
+      border: 1.5px solid var(--line);
+      border-radius: var(--radius);
+      transition: border-color .2s ease, box-shadow .2s ease;
+    }
+
+    details[open] {
+      border-color: var(--navy-900);
+      box-shadow: var(--shadow-sm);
+    }
+
+    summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 22px 26px;
+      color: var(--navy-900);
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 1.02rem;
+      letter-spacing: -.01em;
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    summary::after {
+      content: "+";
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      width: 32px;
+      height: 32px;
+      color: var(--navy-900);
+      background: var(--yellow);
+      border-radius: 50%;
+      font-size: 1.2rem;
+      line-height: 1;
+      font-weight: 700;
+      transition: transform .25s ease;
+    }
+
+    details[open] summary::after {
+      content: "−";
+      transform: rotate(180deg);
+    }
+
+    details p {
+      margin: 0;
+      padding: 0 26px 24px;
+      color: var(--muted);
+      font-size: .97rem;
+    }
+
+    /* ---------- FINAL CTA ---------- */
+    .final-cta {
+      position: relative;
+      padding: 80px 0;
+      overflow: hidden;
+      color: var(--white);
+      background: var(--dark-gradient);
+    }
+
+    .final-cta-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 38px;
+      align-items: center;
+    }
+
+    .final-cta h2 {
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -.025em;
+      margin-bottom: 18px;
+    }
+
+    .final-cta h2 .accent {
+      color: var(--yellow);
+      font-weight: 800;
+    }
+
+    .final-cta p {
+      max-width: 540px;
+      color: rgba(255, 255, 255, .76);
+      font-size: 1.08rem;
+      margin-bottom: 28px;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      padding: 36px 0;
+      color: rgba(255, 255, 255, .65);
+      background: #060E26;
+    }
+
+    .footer-grid {
+      display: grid;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .footer-grid small {
+      color: rgba(255, 255, 255, .5);
+      font-size: .82rem;
+    }
+
+    /* ---------- WHATSAPP FLOAT ---------- */
+    .whatsapp-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 40;
+      display: grid;
+      place-items: center;
+      width: 60px;
+      height: 60px;
+      color: var(--white);
+      background: var(--green);
+      border-radius: 50%;
+      box-shadow: 0 18px 38px rgba(37, 211, 102, .4);
+      transition: transform .25s ease;
+    }
+
+    .whatsapp-float:hover { transform: scale(1.08); }
+
+    .whatsapp-float svg { width: 30px; height: 30px; fill: currentColor; }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (min-width: 720px) {
+      .container { width: min(var(--max), calc(100% - 48px)); }
+      .nav-links { display: flex; }
+
+      .hero-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+
+      .final-cta-grid,
+      .porto-grid {
+        grid-template-columns: minmax(0, 1.05fr) minmax(340px, .95fr);
+        gap: 64px;
+      }
+
+      .hero-grid { padding: 40px 0 40px; }
+
+      .contrast-wrap {
+        grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+        gap: 48px;
+      }
+
+      .compare-board {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+        align-items: stretch;
+      }
+
+      .compare-vs {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+      }
+
+      .compare-card { padding: 40px 36px; }
+
+      .compare-footer {
+        grid-template-columns: 1fr auto;
+        padding: 26px 36px;
+      }
+
+      .products { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+      .feature-card { flex: 0 0 calc(50% - 8px); }
+
+      .footer-grid { grid-template-columns: 1fr auto; }
+    }
+
+    @media (min-width: 900px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        align-items: center;
+        gap: 0;
+        padding: 32px 0 24px;
+      }
+
+      .hero-col-visual {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        align-self: stretch;
+      }
+
+      .hero-car-img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        max-height: 540px;
+        object-fit: contain;
+        object-position: bottom center;
+      }
+
+      .megastat-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 64px;
+      }
+    }
+
+    @media (min-width: 1020px) {
+      section { padding: 110px 0; }
+      .megastat { padding: calc(8.125% + 80px) 0; }
+      .final-cta { padding: 110px 0; }
+
+      .products { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+      .feature-card { flex: 0 0 calc(33.33% - 11px); max-width: 340px; }
+    }
+
+    @media (min-width: 820px) {
+      .timeline {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 28px;
+      }
+
+      .timeline-step {
+        padding: 92px 8px 0;
+        text-align: left;
+      }
+
+      .timeline-icon { top: 0; left: 0; }
+
+      .timeline::before {
+        top: 32px;
+        bottom: auto;
+        left: 8%;
+        right: 8%;
+        width: auto;
+        height: 2px;
+        background-image: linear-gradient(to right, rgba(245, 197, 24, .45) 50%, transparent 50%);
+        background-size: 10px 2px;
+        background-repeat: repeat-x;
+      }
+    }
+
+    /* ---------- SCROLL REVEAL ANIMATIONS ---------- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition:
+        opacity 1.1s cubic-bezier(.22, .61, .36, 1),
+        transform 1.1s cubic-bezier(.22, .61, .36, 1);
+      will-change: opacity, transform;
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+    /* Stagger automático: cada filho atrasado em ~120ms */
+    .reveal-stagger > * {
+      opacity: 0;
+      transform: translateY(24px);
+      transition:
+        opacity 1s cubic-bezier(.22, .61, .36, 1),
+        transform 1s cubic-bezier(.22, .61, .36, 1);
+      will-change: opacity, transform;
+    }
+    .reveal-stagger.is-visible > * { opacity: 1; transform: none; }
+    .reveal-stagger.is-visible > *:nth-child(1) { transition-delay: 0ms; }
+    .reveal-stagger.is-visible > *:nth-child(2) { transition-delay: 120ms; }
+    .reveal-stagger.is-visible > *:nth-child(3) { transition-delay: 240ms; }
+    .reveal-stagger.is-visible > *:nth-child(4) { transition-delay: 360ms; }
+    .reveal-stagger.is-visible > *:nth-child(5) { transition-delay: 480ms; }
+    .reveal-stagger.is-visible > *:nth-child(6) { transition-delay: 600ms; }
+    .reveal-stagger.is-visible > *:nth-child(n+7) { transition-delay: 720ms; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal, .reveal-stagger > * {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
+
+    @media (max-width: 460px) {
+      .hero-actions .btn,
+      .final-cta .btn,
+      .porto-section .btn { width: 100%; }
+      .hero-actions { align-items: stretch; }
+
+      /* Header: botão compacto pra não esmagar a logo */
+      .site-header .btn {
+        min-height: 40px;
+        padding: 8px 14px;
+        font-size: .82rem;
+      }
+      .brand-logo { height: 32px; }
+      .nav { min-height: 64px; gap: 12px; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#top" aria-label="Cota Bem — página inicial">
+        <img
+          src="assets/logo.png"
+          alt="Cota Bem"
+          class="brand-logo"
+          loading="eager"
+        >
+      </a>
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#produtos">Produtos</a>
+        <a href="#metodo">Método</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="btn btn-primary js-whatsapp" href="#" data-product="atendimento" data-utm-content="header">Simular agora</a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <!-- Linha 1: texto (esq) + imagem (dir) -->
+        <div class="hero-grid">
+          <div>
+            <span class="eyebrow">Consórcio sem juros · Porto Bank</span>
+            <h1 id="hero-title">Compre imóvel, veículo ou frota sem pagar <span class="accent">juros</span> para o banco.</h1>
+            <div class="hero-actions">
+              <a class="btn btn-primary btn-arrow js-whatsapp" href="#" data-product="simulacao" data-utm-content="hero_cta">Descobrir a melhor estratégia</a>
+              <a class="btn btn-ghost" href="#metodo">Como funciona</a>
+            </div>
+          </div>
+
+          <!-- Coluna direita: imagem do veículo (desktop only) -->
+          <div class="hero-col-visual" aria-hidden="true">
+            <img
+              src="assets/hero-image.webp"
+              alt="Veículo moderno representando aquisição via consórcio"
+              class="hero-car-img"
+              loading="eager"
+            >
+          </div>
+        </div>
+
+        <!-- Linha 2: stats abaixo das duas colunas (full width) -->
+        <div class="hero-stats" aria-label="Resultados Cota Bem">
+          <div class="hero-stat">
+            <span class="hero-stat-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </span>
+            <div class="hero-stat-text">
+              <strong>+500</strong>
+              <span>clientes atendidos</span>
+            </div>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+            </span>
+            <div class="hero-stat-text">
+              <strong>R$ 120mi</strong>
+              <span>em créditos planejados</span>
+            </div>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </span>
+            <div class="hero-stat-text">
+              <strong>9.8/10</strong>
+              <span>satisfação na consultoria</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Divisória na base do hero -->
+      <div class="hero-wave" aria-hidden="true">
+        <img src="assets/divisor-1.svg" alt="" loading="eager" style="width:100%;display:block;height:auto;">
+      </div>
+    </section>
+
+    <!-- ===================== QUEM SOMOS / COMPARE ===================== -->
+    <section class="compare-section" aria-labelledby="contraste-title">
+      <div class="container">
+        <div class="compare-head">
+          <span class="section-kicker">O problema do mercado</span>
+          <h2 id="contraste-title">A maioria das corretoras<br>recomenda o plano com maior comissão.<br><span class="accent">Não o melhor para&nbsp;você.</span></h2>
+          <p>Grupo, taxa, prazo e histórico de contemplação mudam tudo. Antes de assinar, você precisa entender o que está comprando.</p>
+        </div>
+
+        <div class="compare-board">
+          <article class="compare-card is-market">
+            <span class="compare-card-tag">O que acontece normalmente</span>
+            <h3>Como a maioria opera</h3>
+            <ul class="compare-list">
+              <li class="compare-item">
+                <span class="compare-item-icon" aria-hidden="true">×</span>
+                <span>
+                  <span class="compare-item-title">"Realize seu sonho agora"</span>
+                  <span class="compare-item-sub">Apelo emocional para acelerar a assinatura antes de você comparar.</span>
+                </span>
+              </li>
+              <li class="compare-item">
+                <span class="compare-item-icon" aria-hidden="true">×</span>
+                <span>
+                  <span class="compare-item-title">"Sem juros, sem entrada"</span>
+                  <span class="compare-item-sub">Promessa que esconde taxas, prazos reais e histórico do grupo.</span>
+                </span>
+              </li>
+              <li class="compare-item">
+                <span class="compare-item-icon" aria-hidden="true">×</span>
+                <span>
+                  <span class="compare-item-title">Pressão para fechar no mesmo dia</span>
+                  <span class="compare-item-sub">Urgência artificial para você não ter tempo de pensar ou comparar.</span>
+                </span>
+              </li>
+              <li class="compare-item">
+                <span class="compare-item-icon" aria-hidden="true">×</span>
+                <span>
+                  <span class="compare-item-title">Grupo escolhido pela comissão</span>
+                  <span class="compare-item-sub">O conflito de interesse está embutido na recomendação desde o início.</span>
+                </span>
+              </li>
+            </ul>
+          </article>
+
+          <span class="compare-vs" aria-hidden="true">VS</span>
+
+          <article class="compare-card is-cotabem">
+            <span class="compare-card-tag">Como a Cota Bem faz</span>
+            <h3>O que você recebe aqui</h3>
+            <ul class="compare-list">
+              <li class="compare-item">
+                <span class="compare-item-icon" aria-hidden="true">✓</span>
+                <span>
+                  <span class="compare-item-title">Análise técnica do grupo</span>
+                  <span class="compare-item-sub">Taxa de administração, histórico de contemplação e dados reais do grupo antes de assinar.</span>
+                </span>
+              </li>
+              <li class="compare-item">
+                <span class="compare-item-icon" aria-hidden="true">✓</span>
+                <span>
+                  <span class="compare-item-title">Parcela calculada para o seu fluxo</span>
+                  <span class="compare-item-sub">A parcela de hoje precisa caber no orçamento daqui a três anos também.</span>
+                </span>
+              </li>
+              <li class="compare-item">
+                <span class="compare-item-icon" aria-hidden="true">✓</span>
+                <span>
+                  <span class="compare-item-title">Estratégia de lance para o seu cenário</span>
+                  <span class="compare-item-sub">Cronograma realista de contemplação baseado no que você tem disponível.</span>
+                </span>
+              </li>
+              <li class="compare-item">
+                <span class="compare-item-icon" aria-hidden="true">✓</span>
+                <span>
+                  <span class="compare-item-title">Você assina sabendo o que está comprando</span>
+                  <span class="compare-item-sub">Sem surpresas no contrato, sem promessa que não aparece na letra pequena.</span>
+                </span>
+              </li>
+            </ul>
+          </article>
+        </div>
+
+        <div style="text-align:center; margin-top:40px;">
+          <a class="btn btn-primary btn-arrow js-whatsapp" href="#" data-product="quem-somos" data-utm-content="compare_cta">Fazer simulação gratuitamente</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MEGASTAT ===================== -->
+    <section class="megastat" aria-labelledby="megastat-title">
+      <!-- Divisória no topo: espelhada verticalmente -->
+      <div class="megastat-top-divider" aria-hidden="true">
+        <img src="assets/divisor-1.svg" alt="" loading="lazy" style="transform:scaleY(-1);display:block;">
+      </div>
+
+      <div class="container megastat-grid">
+        <!-- Imagem do carro (coluna visual) -->
+        <div class="megastat-visual">
+          <img
+            src="assets/image-car.webp"
+            alt="Veículo moderno representando aquisição via consórcio"
+            loading="lazy"
+          >
+        </div>
+
+        <!-- Texto -->
+        <div>
+          <span class="eyebrow">Por que o consórcio cresceu</span>
+          <h2 id="megastat-title" style="margin-top:22px;"><span class="accent">1 em cada 3</span> carros no Brasil já é comprado via consórcio.</h2>
+          <p>A taxa de administração média de um consórcio fica entre 15% e 20% ao longo de todo o contrato. Em um financiamento bancário, os juros chegam a ultrapassar 100% do valor do bem. Quando você entende essa diferença, a decisão muda.</p>
+          <a class="btn btn-primary btn-arrow js-whatsapp" href="#" data-product="megastat" data-utm-content="megastat_cta">Ver quanto eu pagaria de juros</a>
+        </div>
+      </div>
+
+      <!-- Divisória na base: orientação original -->
+      <div class="megastat-bottom-divider" aria-hidden="true">
+        <img src="assets/divisor-1.svg" alt="" loading="lazy" style="display:block;">
+      </div>
+    </section>
+
+    <!-- ===================== PRODUTOS ===================== -->
+    <section class="section-light" id="produtos" aria-labelledby="produtos-title">
+
+      <div class="container" style="position:relative;z-index:1;">
+        <div class="section-head">
+          <span class="section-kicker">Produtos</span>
+          <h2 id="produtos-title">Construa o próximo passo <span class="accent">sem abrir mão da sua estabilidade.</span></h2>
+          <p>Consórcios para imóveis, veículos e equipamentos com análise estratégica de grupo e prazo.</p>
+        </div>
+        <div class="products">
+          <article class="product-card">
+            <div class="product-image">
+              <span class="product-tag">Imóveis</span>
+              <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=900&q=80" alt="Ambiente imobiliário moderno com mesa de planejamento" loading="lazy">
+            </div>
+            <div class="product-body">
+              <h3>Consórcio imobiliário</h3>
+              <p>Residencial, comercial, terreno ou construção. Com análise de grupo e prazo, você sabe quando vai ter acesso ao crédito antes de assinar.</p>
+              <a class="product-link js-whatsapp" href="#" data-product="Imóvel" data-utm-content="produto_imovel">Simular agora</a>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-image">
+              <span class="product-tag">Veículos</span>
+              <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=80" alt="Veículo executivo em cenário urbano" loading="lazy">
+            </div>
+            <div class="product-body">
+              <h3>Consórcio de veículos</h3>
+              <p>Leves e utilitários. Você define a faixa de crédito e a Cota Bem analisa o grupo com melhor histórico de contemplação para o seu prazo.</p>
+              <a class="product-link js-whatsapp" href="#" data-product="Veículo" data-utm-content="produto_veiculo">Quero saber mais</a>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-image">
+              <span class="product-tag">Frota &amp; Pesados</span>
+              <img src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&w=900&q=80" alt="Máquina agrícola em operação no campo" loading="lazy">
+            </div>
+            <div class="product-body">
+              <h3>Frota e pesados</h3>
+              <p>Caminhões, ônibus e máquinas agrícolas. Expansão de capacidade operacional sem retirar dinheiro do capital de giro da empresa.</p>
+              <a class="product-link js-whatsapp" href="#" data-product="Frota e Pesados" data-utm-content="produto_frota">Quero saber mais</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MÉTODO / FEATURES ===================== -->
+    <section id="metodo" aria-labelledby="metodo-title">
+      <div class="container method-centered">
+        <div class="section-head">
+          <span class="section-kicker">Por que a Cota Bem</span>
+          <h2 id="metodo-title">Você recebe análise técnica de grupo, taxa e estratégia de lance <span class="accent">antes de assinar qualquer contrato.</span></h2>
+          <p>São cinco coisas que a Cota Bem faz em cada atendimento e que a maioria das corretoras simplesmente não faz.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            </span>
+            <h3>Atendimento individual</h3>
+            <p>Cada cliente tem um cenário diferente. A análise de grupo, plano e estratégia de lance é feita para o seu caso, não para um modelo genérico.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+            </span>
+            <h3>Análise técnica do grupo</h3>
+            <p>Taxa de administração, histórico de assembleias e dados de contemplação analisados antes de qualquer indicação de plano.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </span>
+            <h3>Segurança institucional</h3>
+            <p>Consórcio administrado pela Porto Bank, regulada pelo Banco Central e com mais de 75 anos no mercado financeiro brasileiro.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><polyline points="9 16 11 18 15 14"></polyline></svg>
+            </span>
+            <h3>Parcela previsível do início ao fim</h3>
+            <p>Você sabe exatamente o que vai pagar durante todo o contrato, sem reajuste de taxa ou surpresa no meio do caminho.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+            </span>
+            <h3>Tudo explicado antes de assinar</h3>
+            <p>Simulação, grupo, assembleia e contemplação apresentados com clareza em cada etapa, sem letra pequena escondida.</p>
+          </article>
+        </div>
+        <div class="method-cta">
+          <a class="btn btn-primary btn-arrow js-whatsapp" href="#" data-product="metodo" data-utm-content="metodo_cta">Fazer simulação gratuitamente</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TIMELINE / COMO FUNCIONA ===================== -->
+    <section class="section-navy" aria-labelledby="funciona-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">Como funciona</span>
+          <h2 id="funciona-title">Do primeiro contato até o acesso ao crédito, em quatro <span class="accent">etapas.</span></h2>
+        </div>
+        <ol class="timeline">
+          <li class="timeline-step">
+            <span class="timeline-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"></rect><line x1="8" y1="6" x2="16" y2="6"></line><line x1="8" y1="10" x2="10" y2="10"></line><line x1="12" y1="10" x2="14" y2="10"></line><line x1="16" y1="10" x2="16" y2="10"></line><line x1="8" y1="14" x2="10" y2="14"></line><line x1="12" y1="14" x2="14" y2="14"></line><line x1="8" y1="18" x2="14" y2="18"></line></svg>
+            </span>
+            <span class="timeline-label" aria-hidden="true"></span>
+            <h3>Simulação sem compromisso</h3>
+            <p>Você informa o bem, o prazo e a faixa de crédito. A Cota Bem apresenta as opções disponíveis com os números reais.</p>
+          </li>
+          <li class="timeline-step">
+            <span class="timeline-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+            </span>
+            <span class="timeline-label" aria-hidden="true"></span>
+            <h3>Análise do seu cenário</h3>
+            <p>Diagnóstico de renda, fluxo de caixa e objetivo de aquisição para indicar o plano adequado ao seu momento.</p>
+          </li>
+          <li class="timeline-step">
+            <span class="timeline-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><polyline points="9 14 11 16 15 12"></polyline></svg>
+            </span>
+            <span class="timeline-label" aria-hidden="true"></span>
+            <h3>Plano definido</h3>
+            <p>Grupo certo e estratégia de lance alinhada ao seu planejamento.</p>
+          </li>
+          <li class="timeline-step">
+            <span class="timeline-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="7.5 4.21 12 6.81 16.5 4.21"></polyline><polyline points="7.5 19.79 7.5 14.6 3 12"></polyline><polyline points="21 12 16.5 14.6 16.5 19.79"></polyline><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+            </span>
+            <span class="timeline-label" aria-hidden="true"></span>
+            <h3>Acesso ao crédito</h3>
+            <p>Você recebe a carta de crédito no prazo planejado, com acompanhamento em cada assembleia ao longo do contrato.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===================== PORTO BANK ===================== -->
+    <section class="porto-section" aria-labelledby="porto-title">
+      <div class="container porto-grid">
+        <div class="section-head">
+          <span class="section-kicker">Parceria oficial</span>
+          <h2 id="porto-title">Seu consórcio<br>administrado pela<br><span class="accent">Porto Bank.</span></h2>
+          <p>A Porto Bank administra o consórcio. A Cota Bem faz a consultoria. Você tem os dois lados: análise antes de entrar e solidez institucional durante todo o contrato.</p>
+          <ul class="porto-badges">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Regulada pelo Banco Central do Brasil
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              +75 anos de mercado financeiro
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Administradora líder em consórcio de bens
+            </li>
+          </ul>
+          <a class="btn btn-primary btn-arrow js-whatsapp" href="#" data-product="porto" data-utm-content="porto_cta">Fazer simulação gratuitamente</a>
+        </div>
+        <div class="porto-img-wrap">
+          <img
+            src="assets/image-portobank.webp"
+            alt="Mulher utilizando smartphone — parceria Porto Bank e Cota Bem"
+            class="porto-img"
+            loading="lazy"
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FAQ ===================== -->
+    <section id="faq" aria-labelledby="faq-title">
+      <div class="container contrast-wrap">
+        <div class="section-head">
+          <span class="section-kicker">Dúvidas frequentes</span>
+          <h2 id="faq-title">Perguntas que merecem resposta <span class="accent">direta.</span></h2>
+          <p>Sem jargão. Sem empurrar uma decisão. O objetivo é você entender quando o consórcio faz sentido.</p>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>Consórcio demora muito para contemplar?</summary>
+            <p>Depende do grupo, do prazo, da estratégia de lance e do seu objetivo. A Cota Bem avalia esses pontos antes de indicar um plano, porque tempo de contemplação não deve ser tratado como promessa.</p>
+          </details>
+          <details>
+            <summary>E se eu não for sorteado no consórcio?</summary>
+            <p>Você continua participando das assembleias e pode usar estratégia de lance. O papel da consultoria é avaliar qual plano dá mais coerência entre prazo, parcela e chance de contemplação.</p>
+          </details>
+          <details>
+            <summary>Consórcio é melhor que financiamento?</summary>
+            <p>Depende do objetivo. Quem precisa do bem imediatamente e tem capacidade de arcar com juros pode preferir o financiamento. Para quem tem prazo, quer preservar caixa e não quer enriquecer banco durante anos, o consórcio costuma ser mais eficiente. A análise do seu cenário específico é o que determina a resposta.</p>
+          </details>
+          <details>
+            <summary>Como funciona a estratégia de lance?</summary>
+            <p>O lance é uma antecipação de parcelas para tentar contemplação. A estratégia considera histórico do grupo, valor disponível, prazo desejado e impacto no seu fluxo financeiro.</p>
+          </details>
+          <details>
+            <summary>A Porto Bank é confiável?</summary>
+            <p>A Porto Bank faz parte de um dos grupos mais conhecidos do mercado brasileiro. Ainda assim, cada contratação deve ser analisada com clareza de regras, taxas, prazos e responsabilidades.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FINAL CTA ===================== -->
+    <section class="final-cta" aria-labelledby="cta-title">
+      <div class="container final-cta-grid">
+        <div>
+          <span class="eyebrow">Próximo passo</span>
+          <h2 id="cta-title" style="margin-top:22px;">Quer saber se o consórcio faz sentido para o que você quer <span class="accent">comprar?</span></h2>
+          <p>Uma conversa de 15 minutos é suficiente para entender grupo, prazo e estratégia de lance. Sem pressão, sem compromisso de compra.</p>
+          <a class="btn btn-primary btn-arrow js-whatsapp" href="#" data-product="simulacao-final" data-utm-content="cta_final">Fazer simulação gratuitamente</a>
+        </div>
+
+        <!-- SIMULADOR INTERATIVO -->
+        <div class="simulator-card" id="simulador">
+          <div class="sim-badge" aria-hidden="true">40% Redutor</div>
+
+          <!-- STEP 1 — Parâmetros -->
+          <div class="sim-step" id="sim-step-1">
+            <h3 class="sim-title">Chegou a hora de realizar o seu <span>sonho</span></h3>
+            <p class="sim-section-label">Selecione o tipo de bem:</p>
+
+            <div class="sim-toggle-group" id="sim-tipo-bem" role="group" aria-label="Tipo de bem">
+              <button class="sim-toggle" type="button" data-value="imovel">Imóvel</button>
+              <button class="sim-toggle" type="button" data-value="automovel">Automóvel</button>
+              <button class="sim-toggle" type="button" data-value="pesados">Pesados</button>
+            </div>
+
+            <p class="sim-section-label">Tipo de pessoa:</p>
+            <div class="sim-toggle-group" id="sim-tipo-pessoa" role="group" aria-label="Tipo de pessoa">
+              <button class="sim-toggle" type="button" data-value="fisica">Pessoa Física</button>
+              <button class="sim-toggle" type="button" data-value="juridica">Pessoa Jurídica</button>
+            </div>
+
+            <div id="sim-slider-wrap" class="sim-slider-wrap is-blurred">
+              <p class="sim-section-label">Escolha o valor do crédito:</p>
+              <p class="sim-value-display">R$ <span id="sim-value-txt">140.000,00</span></p>
+              <input class="sim-range" type="range" id="sim-range" min="140000" max="1000000" step="10000" value="140000" aria-label="Valor do crédito">
+              <div class="sim-range-labels">
+                <span id="sim-range-min">R$ 140.000,00</span>
+                <span id="sim-range-max">R$ 1.000.000,00</span>
+              </div>
+            </div>
+
+            <p class="sim-error" id="sim-error" style="display:none;">Selecione os itens acima para simular</p>
+            <button class="sim-btn-primary" id="sim-btn-simular" type="button">SIMULAR AGORA</button>
+            <p class="sim-note">Crédito mínimo: R$ 140.000,00</p>
+          </div>
+
+          <!-- STEP 2 — Dados de contato + prévia bloqueada -->
+          <div class="sim-step" id="sim-step-2" style="display:none;">
+            <h3 class="sim-title">Sua parcela está <span>quase pronta</span></h3>
+
+            <div class="sim-preview-locked" aria-hidden="true">
+              <p class="sim-preview-label">Parcela com redução de <strong id="sim-preview-reducao">35%</strong></p>
+              <div class="sim-preview-value-wrap">
+                <span class="sim-preview-value">R$ 0.000,00</span>
+                <span class="sim-preview-lock">🔒</span>
+              </div>
+              <p class="sim-preview-hint">Preencha os dados abaixo para liberar o valor</p>
+            </div>
+
+            <div class="sim-resumo">
+              <span><strong id="sim-resumo-bem">—</strong></span>
+              <span>Crédito: <strong id="sim-resumo-valor">—</strong></span>
+            </div>
+
+            <p class="sim-subtitle">Um consultor entrará em contato para detalhar a condição:</p>
+            <div class="sim-field">
+              <input type="text" id="sim-nome" placeholder="Seu nome completo" autocomplete="name">
+            </div>
+            <div class="sim-field">
+              <input type="tel" id="sim-whatsapp" placeholder="Seu WhatsApp (com DDD)" autocomplete="tel">
+            </div>
+            <div class="sim-field">
+              <input type="email" id="sim-email" placeholder="Seu e-mail" autocomplete="email">
+            </div>
+            <div class="sim-lgpd-field">
+              <input type="checkbox" id="sim-lgpd">
+              <label for="sim-lgpd">Autorizo o contato da Cota Bem e o tratamento dos meus dados conforme a <a href="#">Política de Privacidade</a>.</label>
+            </div>
+            <button class="sim-btn-primary" id="sim-btn-enviar" type="button">Revelar minha parcela →</button>
+            <button class="sim-btn-back" id="sim-btn-voltar" type="button">← Voltar</button>
+          </div>
+
+          <!-- STEP 3 — Resultado revelado + confirmação -->
+          <div class="sim-step sim-success-wrap" id="sim-step-3" style="display:none;">
+            <div class="sim-check-icon" aria-hidden="true">✓</div>
+            <h3 class="sim-success-title">Sua parcela com redução <span>foi liberada</span></h3>
+
+            <div class="sim-parcela-box">
+              <p class="sim-parcela-label">Parcela mensal estimada:</p>
+              <p class="sim-parcela-original" id="sim-parcela-sem">—</p>
+              <p class="sim-parcela-final" id="sim-parcela-com">—</p>
+            </div>
+
+            <div class="sim-condicoes" id="sim-condicoes">
+              <div class="sim-condicoes-row"><span>Crédito</span><strong id="sim-cond-credito">—</strong></div>
+              <div class="sim-condicoes-row"><span>Prazo</span><strong id="sim-cond-prazo">—</strong></div>
+              <div class="sim-condicoes-row"><span>Redução na parcela</span><strong id="sim-cond-reducao">—</strong></div>
+              <div class="sim-condicoes-row"><span>Taxa adm</span><strong id="sim-cond-taxa">—</strong></div>
+            </div>
+
+            <p class="sim-success-text" style="margin-top:16px;">Um consultor da Cota Bem entrará em contato em até <strong>24 horas</strong> para detalhar essa condição e tirar suas dúvidas.</p>
+
+            <p class="sim-disclaimer">Valores ilustrativos baseados na campanha Porto Bank vigente. Sujeitos a análise de crédito, disponibilidade de cotas e regulamento da administradora. Ofertas válidas até 31/05/2026.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer>
+    <div class="container footer-grid">
+      <a href="#top" aria-label="Cota Bem — voltar ao topo">
+        <img
+          src="assets/logo.png"
+          alt="Cota Bem"
+          class="footer-logo"
+          loading="lazy"
+        >
+      </a>
+      <small>Consórcio com planejamento, método e transparência. CNPJ 00.000.000/0000-00.</small>
+    </div>
+  </footer>
+
+  <!-- Botão flutuante WhatsApp -->
+  <a class="whatsapp-float js-whatsapp" href="#" aria-label="Falar com a Cota Bem no WhatsApp" data-product="botao-flutuante" data-utm-content="floating_whatsapp">
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M16.01 3.2A12.73 12.73 0 0 0 5.24 22.7L3.6 28.8l6.25-1.62A12.74 12.74 0 1 0 16.01 3.2Zm0 23.17c-2.04 0-4.02-.6-5.71-1.72l-.41-.27-3.7.96.99-3.6-.29-.43a10.43 10.43 0 1 1 9.12 5.06Zm5.72-7.8c-.31-.16-1.84-.91-2.13-1.01-.29-.11-.5-.16-.71.16-.21.31-.82 1.01-1 1.22-.18.21-.37.24-.68.08-.31-.16-1.31-.48-2.5-1.54-.92-.82-1.55-1.84-1.73-2.15-.18-.31-.02-.48.14-.64.14-.14.31-.37.47-.55.16-.18.21-.31.31-.52.11-.21.05-.39-.03-.55-.08-.16-.71-1.7-.97-2.33-.26-.61-.52-.53-.71-.54h-.61c-.21 0-.55.08-.84.39-.29.31-1.1 1.08-1.1 2.62s1.13 3.04 1.28 3.25c.16.21 2.22 3.39 5.38 4.75.75.32 1.34.52 1.8.66.76.24 1.45.21 1.99.13.61-.09 1.84-.75 2.1-1.48.26-.73.26-1.35.18-1.48-.08-.13-.29-.21-.61-.37Z"></path>
+    </svg>
+  </a>
+
+  <script>
+    const WHATSAPP_NUMBER = "5500000000000";
+    const BASE_MESSAGE = "Olá! Quero entender se o consórcio faz sentido para o que estou planejando comprar. Pode me ajudar com uma simulação?";
+
+    function currentUtm(content) {
+      const params = new URLSearchParams(window.location.search);
+      const source = params.get("utm_source") || "site";
+      const medium = params.get("utm_medium") || "lp";
+      const campaign = params.get("utm_campaign") || "cotabem";
+      return `utm_source=${source}; utm_medium=${medium}; utm_campaign=${campaign}; utm_content=${content || "cta"}`;
+    }
+
+    function whatsappUrl(message, content) {
+      const text = `${message}\n\nRastreamento: ${currentUtm(content)}`;
+      return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+    }
+
+    document.querySelectorAll(".js-whatsapp").forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        if (window.fbq) fbq("trackCustom", "WhatsAppClick", { content: link.dataset.utmContent || "cta" });
+        window.open(whatsappUrl(BASE_MESSAGE, link.dataset.utmContent), "_blank", "noopener");
+      });
+    });
+
+    // ---- SCROLL REVEAL ANIMATIONS ----
+    (function () {
+      if (!("IntersectionObserver" in window)) return;
+      var prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (prefersReduced) return;
+
+      // Elementos individuais que ganham fade-up
+      var singleSelectors = [
+        ".hero .eyebrow",
+        ".hero h1",
+        ".hero-actions",
+        ".section-head",
+        ".compare-head",
+        ".compare-board",
+        ".megastat-grid",
+        ".timeline",
+        ".porto-section .container > *",
+        ".faq-list",
+        ".final-cta-grid > *"
+      ];
+      singleSelectors.forEach(function (sel) {
+        document.querySelectorAll(sel).forEach(function (el) {
+          el.classList.add("reveal");
+        });
+      });
+
+      // Grupos com stagger (filhos aparecem em cascata)
+      var staggerSelectors = [
+        ".hero-stats",
+        ".products",
+        ".features",
+        ".compare-list"
+      ];
+      staggerSelectors.forEach(function (sel) {
+        document.querySelectorAll(sel).forEach(function (el) {
+          el.classList.add("reveal-stagger");
+        });
+      });
+
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+
+      document.querySelectorAll(".reveal, .reveal-stagger").forEach(function (el) {
+        io.observe(el);
+      });
+    })();
+
+    // ---- SIMULADOR ----
+    // Tabelas da Campanha Porto Bank — Maio/2026 (válidas até 31/05/2026)
+    // IMPORTANTE p/ o dev: atualizar este objeto sempre que mudar a campanha mensal.
+    const CAMPANHA_PORTO = {
+      automovel: {
+        prazoMeses: 120,
+        taxaAdm: "0,12% ao mês",
+        reducaoPct: 20,
+        min: 180000,
+        max: 260000,
+        step: 10000,
+        // chave = crédito | { sem: parcela sem oferta, com: parcela com redução -20% }
+        tabela: {
+          180000: { sem: 1819, com: 1471 },
+          190000: { sem: 1920, com: 1553 },
+          200000: { sem: 2021, com: 1634 },
+          210000: { sem: 2122, com: 1716 },
+          220000: { sem: 2223, com: 1798 },
+          230000: { sem: 2324, com: 1880 },
+          240000: { sem: 2425, com: 1961 },
+          250000: { sem: 2526, com: 2043 },
+          260000: { sem: 2627, com: 2125 }
+        }
+      },
+      imovel: {
+        prazoMeses: 200,
+        taxaAdm: "0,11% a 0,12% ao mês",
+        reducaoPct: 35,
+        min: 140000,
+        max: 560000,
+        step: 10000, // até 280k vai de 10 em 10; acima, snap automático p/ múltiplo de 20k
+        tabela: {
+          140000: { sem: 3727, com: 635 },
+          150000: { sem: 3993, com: 680 },
+          160000: { sem: 4260, com: 726 },
+          170000: { sem: 4526, com: 771 },
+          180000: { sem: 4792, com: 816 },
+          190000: { sem: 5058, com: 862 },
+          200000: { sem: 5325, com: 907 },
+          210000: { sem: 5591, com: 952 },
+          220000: { sem: 5857, com: 998 },
+          230000: { sem: 6123, com: 1043 },
+          240000: { sem: 6390, com: 1089 },
+          250000: { sem: 6656, com: 1134 },
+          260000: { sem: 6922, com: 1179 },
+          270000: { sem: 7188, com: 1225 },
+          280000: { sem: 7424, com: 1250 },
+          300000: { sem: 7955, com: 1339 },
+          320000: { sem: 8485, com: 1428 },
+          340000: { sem: 9015, com: 1518 },
+          360000: { sem: 9546, com: 1607 },
+          380000: { sem: 10076, com: 1696 },
+          400000: { sem: 10606, com: 1785 },
+          420000: { sem: 11137, com: 1875 },
+          440000: { sem: 11667, com: 1964 },
+          460000: { sem: 12198, com: 2053 },
+          480000: { sem: 12728, com: 2143 },
+          500000: { sem: 13258, com: 2232 },
+          520000: { sem: 13789, com: 2321 },
+          540000: { sem: 14319, com: 2411 },
+          560000: { sem: 14849, com: 2500 }
+        }
+      }
+      // pesados / PJ: sem tabela — lead segue sem revelar parcela (consultor entra em contato com condição personalizada)
+    };
+
+    (function () {
+      var tipoBem = null, tipoPessoa = null, creditValue = 140000;
+      var ultimaParcela = null; // { sem, com, credito, prazoMeses, taxaAdm, reducaoPct } ou null
+
+      function fmtBRL(v) {
+        return v.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      }
+      function fmtBRLInt(v) {
+        return v.toLocaleString("pt-BR", { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+      }
+
+      function showSimStep(n) {
+        [1, 2, 3].forEach(function (i) {
+          var el = document.getElementById("sim-step-" + i);
+          if (el) el.style.display = (i === n) ? "block" : "none";
+        });
+      }
+
+      function initToggles(groupId, onSelect) {
+        var group = document.getElementById(groupId);
+        if (!group) return;
+        group.querySelectorAll(".sim-toggle").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            group.querySelectorAll(".sim-toggle").forEach(function (b) { b.classList.remove("is-active"); });
+            btn.classList.add("is-active");
+            onSelect(btn.dataset.value);
+          });
+        });
+      }
+
+      function updateSliderRange() {
+        if (!rangeEl) return;
+        var camp = CAMPANHA_PORTO[tipoBem];
+        if (!camp) {
+          // Pesados ou tipo não-mapeado: mantém faixa ampla, será tratado no envio
+          rangeEl.min = 140000;
+          rangeEl.max = 1000000;
+          rangeEl.step = 10000;
+        } else {
+          rangeEl.min = camp.min;
+          rangeEl.max = camp.max;
+          rangeEl.step = camp.step;
+        }
+        if (parseInt(rangeEl.value) < parseInt(rangeEl.min)) rangeEl.value = rangeEl.min;
+        if (parseInt(rangeEl.value) > parseInt(rangeEl.max)) rangeEl.value = rangeEl.max;
+        creditValue = parseInt(rangeEl.value);
+        if (valueTxt) valueTxt.textContent = fmtBRL(creditValue);
+        var lblMin = document.getElementById("sim-range-min");
+        var lblMax = document.getElementById("sim-range-max");
+        if (lblMin) lblMin.textContent = "R$ " + fmtBRLInt(parseInt(rangeEl.min)) + ",00";
+        if (lblMax) lblMax.textContent = "R$ " + fmtBRLInt(parseInt(rangeEl.max)) + ",00";
+        updateTrack(rangeEl);
+      }
+
+      function checkSlider() {
+        if (tipoBem && tipoPessoa) {
+          var sw = document.getElementById("sim-slider-wrap");
+          if (sw) sw.classList.remove("is-blurred");
+          var err = document.getElementById("sim-error");
+          if (err) err.style.display = "none";
+        }
+        updateSliderRange();
+      }
+
+      initToggles("sim-tipo-bem", function (v) { tipoBem = v; checkSlider(); });
+      initToggles("sim-tipo-pessoa", function (v) { tipoPessoa = v; checkSlider(); });
+
+      function updateTrack(el) {
+        var pct = (el.value - el.min) / (el.max - el.min) * 100;
+        el.style.background = "linear-gradient(to right, var(--accent-blue) " + pct + "%, var(--line) " + pct + "%)";
+      }
+
+      var rangeEl = document.getElementById("sim-range");
+      var valueTxt = document.getElementById("sim-value-txt");
+      if (rangeEl) {
+        updateTrack(rangeEl);
+        rangeEl.addEventListener("input", function () {
+          creditValue = parseInt(rangeEl.value);
+          if (valueTxt) valueTxt.textContent = fmtBRL(creditValue);
+          updateTrack(rangeEl);
+        });
+      }
+
+      // Lookup: encontra a entrada da tabela mais próxima do valor escolhido
+      function lookupParcela(tipo, valor) {
+        var camp = CAMPANHA_PORTO[tipo];
+        if (!camp) return null;
+        var keys = Object.keys(camp.tabela).map(Number).sort(function(a,b){return a-b;});
+        var closest = keys.reduce(function(prev, cur) {
+          return Math.abs(cur - valor) < Math.abs(prev - valor) ? cur : prev;
+        });
+        var row = camp.tabela[closest];
+        return {
+          credito: closest,
+          sem: row.sem,
+          com: row.com,
+          prazoMeses: camp.prazoMeses,
+          taxaAdm: camp.taxaAdm,
+          reducaoPct: camp.reducaoPct
+        };
+      }
+
+      var btnSimular = document.getElementById("sim-btn-simular");
+      if (btnSimular) {
+        btnSimular.addEventListener("click", function () {
+          if (!tipoBem || !tipoPessoa) {
+            var err = document.getElementById("sim-error");
+            if (err) err.style.display = "block";
+            return;
+          }
+          // Preenche resumo + reducao no step 2 (prévia bloqueada)
+          var lookup = lookupParcela(tipoBem, creditValue);
+          var resumoBem = document.getElementById("sim-resumo-bem");
+          var resumoValor = document.getElementById("sim-resumo-valor");
+          var previewReducao = document.getElementById("sim-preview-reducao");
+          if (resumoBem) resumoBem.textContent = (tipoBem === "imovel" ? "Imóvel" : tipoBem === "automovel" ? "Automóvel" : "Pesados") + " · " + (tipoPessoa === "fisica" ? "PF" : "PJ");
+          if (resumoValor) resumoValor.textContent = "R$ " + fmtBRLInt(creditValue);
+          if (previewReducao) previewReducao.textContent = lookup ? (lookup.reducaoPct + "%") : "personalizada";
+          showSimStep(2);
+        });
+      }
+
+      var btnVoltar = document.getElementById("sim-btn-voltar");
+      if (btnVoltar) btnVoltar.addEventListener("click", function () { showSimStep(1); });
+
+      // -------- ENVIO DO LEAD --------
+      // TODO (dev): plugar aqui o destino real do lead (webhook, Google Sheets via Apps Script,
+      // RD Station, HubSpot, ou e-mail via API tipo Formspree/Resend). Hoje só registra no console.
+      function enviarLead(lead) {
+        return new Promise(function (resolve) {
+          console.log("[LEAD CAPTURADO]", lead);
+          // Exemplo de integração futura:
+          // return fetch("https://script.google.com/macros/s/XXX/exec", {
+          //   method: "POST",
+          //   body: JSON.stringify(lead)
+          // }).then(resolve);
+          setTimeout(resolve, 300); // simula latência
+        });
+      }
+
+      var btnEnviar = document.getElementById("sim-btn-enviar");
+      if (btnEnviar) {
+        btnEnviar.addEventListener("click", function () {
+          var nome  = (document.getElementById("sim-nome") || {}).value || "";
+          var wpp   = (document.getElementById("sim-whatsapp") || {}).value || "";
+          var email = (document.getElementById("sim-email") || {}).value || "";
+          var lgpd  = (document.getElementById("sim-lgpd") || {}).checked || false;
+
+          if (!nome.trim() || !wpp.trim() || !email.trim()) {
+            alert("Preencha nome, WhatsApp e e-mail para continuar.");
+            return;
+          }
+          if (!lgpd) {
+            alert("É necessário autorizar o contato e o tratamento dos dados.");
+            return;
+          }
+
+          var lookup = lookupParcela(tipoBem, creditValue);
+          ultimaParcela = lookup;
+
+          var lead = {
+            nome: nome.trim(),
+            whatsapp: wpp.trim(),
+            email: email.trim(),
+            tipoBem: tipoBem,
+            tipoPessoa: tipoPessoa,
+            creditoSolicitado: creditValue,
+            parcelaCalculada: lookup || null,
+            origem: "simulador-site",
+            campanha: "porto-bank-maio-2026",
+            utm: currentUtm("simulador_final"),
+            timestamp: new Date().toISOString()
+          };
+
+          btnEnviar.disabled = true;
+          btnEnviar.textContent = "Enviando...";
+
+          enviarLead(lead).then(function () {
+            if (window.fbq) fbq("track", "Lead", { content_name: "simulador" });
+
+            // Revela parcela ou mensagem genérica (pesados/PJ sem tabela)
+            var semEl   = document.getElementById("sim-parcela-sem");
+            var comEl   = document.getElementById("sim-parcela-com");
+            var condEl  = document.getElementById("sim-condicoes");
+            var credEl  = document.getElementById("sim-cond-credito");
+            var prazoEl = document.getElementById("sim-cond-prazo");
+            var redEl   = document.getElementById("sim-cond-reducao");
+            var taxaEl  = document.getElementById("sim-cond-taxa");
+
+            if (lookup) {
+              if (semEl) semEl.textContent = "R$ " + fmtBRL(lookup.sem);
+              if (comEl) comEl.textContent = "R$ " + fmtBRL(lookup.com);
+              if (credEl)  credEl.textContent  = "R$ " + fmtBRLInt(lookup.credito);
+              if (prazoEl) prazoEl.textContent = lookup.prazoMeses + " meses";
+              if (redEl)   redEl.textContent   = "-" + lookup.reducaoPct + "%";
+              if (taxaEl)  taxaEl.textContent  = lookup.taxaAdm;
+              if (condEl)  condEl.style.display = "block";
+            } else {
+              // Sem tabela (ex: Pesados) — mostra mensagem personalizada
+              if (semEl) semEl.textContent = "";
+              if (comEl) comEl.textContent = "Condição personalizada";
+              if (condEl) condEl.style.display = "none";
+            }
+
+            showSimStep(3);
+            btnEnviar.disabled = false;
+            btnEnviar.textContent = "Revelar minha parcela →";
+          });
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
