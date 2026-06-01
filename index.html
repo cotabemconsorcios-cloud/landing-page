@@ -2454,13 +2454,34 @@
       });
     })();
 
-    // ---- PARALLAX SUTIL (progressive enhancement) ----
+    // ---- DETECÇÃO DE CAPACIDADE (adaptive loading) ----
+    // Decide se o dispositivo + rede aguentam efeitos mais "caros" (ex.: parallax).
+    // Conservador apenas quando há SINAL claro de limitação; se a API não existe
+    // (Safari/Firefox não expõem connection/deviceMemory), não penaliza o usuário.
+    function deviceIsCapable() {
+      try {
+        var c = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+        if (c) {
+          if (c.saveData) return false;                              // usuário pediu economia de dados
+          if (/(^|\b)(slow-2g|2g|3g)$/.test(c.effectiveType || "")) return false; // rede fraca
+          if (typeof c.rtt === "number" && c.rtt > 0 && c.rtt > 500) return false; // latência alta
+        }
+        if (typeof navigator.deviceMemory === "number" && navigator.deviceMemory < 4) return false;        // < 4 GB RAM
+        if (typeof navigator.hardwareConcurrency === "number" && navigator.hardwareConcurrency < 4) return false; // < 4 núcleos
+      } catch (e) { /* em dúvida, segue habilitado */ }
+      return true;
+    }
+    window.__deviceIsCapable = deviceIsCapable();
+
+    // ---- PARALLAX SUTIL (progressive enhancement + adaptive loading) ----
     // Move o BLOCO inteiro da imagem (nunca a imagem dentro do recorte),
-    // então não há risco de cortar a composição. Só em telas grandes c/ mouse.
+    // então não há risco de cortar a composição. Só em telas grandes c/ mouse
+    // E quando o dispositivo/rede têm capacidade suficiente.
     (function () {
       if (!("IntersectionObserver" in window)) return;
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
       if (!window.matchMedia("(min-width: 900px) and (pointer: fine)").matches) return;
+      if (!window.__deviceIsCapable) return;   // rede/dispositivo fraco → versão sem parallax
 
       var MAX = 18, SPEED = 0.05;
       var targets = [];
