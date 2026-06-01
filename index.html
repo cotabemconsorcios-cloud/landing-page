@@ -1515,6 +1515,18 @@
       align-items: center;
     }
 
+    .final-cta-visual {
+      border-radius: 24px;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+    }
+    .final-cta-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
     .final-cta h2 {
       font-size: clamp(2rem, 5vw, 3.6rem);
       font-weight: 500;
@@ -1568,6 +1580,7 @@
       .container { width: min(var(--max), calc(100% - 48px)); }
       .nav-links { display: flex; }
 
+      .final-cta-grid,
       .porto-grid {
         grid-template-columns: minmax(0, 1.05fr) minmax(340px, .95fr);
         gap: 64px;
@@ -2272,6 +2285,10 @@
           <h2 id="cta-title" style="margin-top:22px;">Quer saber se o consórcio faz sentido para o que você quer <span class="accent">comprar?</span></h2>
           <p>Uma conversa de 15 minutos é suficiente para entender grupo, prazo e estratégia de lance. Sem pressão, sem compromisso de compra.</p>
           <a class="btn btn-primary" href="https://wa.me/5562998596663?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Cota%20Bem%20e%20gostaria%20de%20falar%20com%20um%20consultor%20sobre%20cons%C3%B3rcio.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer">Fale com um consultor</a>
+        </div>
+
+        <div class="final-cta-visual" aria-hidden="true">
+          <img src="assets/hero-image.webp" alt="Veículo moderno representando aquisição via consórcio" loading="lazy">
         </div>
       </div>
     </section>
