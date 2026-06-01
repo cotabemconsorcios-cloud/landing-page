@@ -2354,6 +2354,19 @@
       });
     })();
 
+    // ---- FAQ EM SANFONA (só um item aberto por vez) ----
+    (function () {
+      var items = document.querySelectorAll(".faq-list details");
+      items.forEach(function (item) {
+        item.addEventListener("toggle", function () {
+          if (!item.open) return;
+          items.forEach(function (other) {
+            if (other !== item) other.open = false;
+          });
+        });
+      });
+    })();
+
     // ---- SIMULADOR ----
     // Tabelas da Campanha Porto Bank — Maio/2026 (válidas até 31/05/2026)
     // IMPORTANTE p/ o dev: atualizar este objeto sempre que mudar a campanha mensal.
