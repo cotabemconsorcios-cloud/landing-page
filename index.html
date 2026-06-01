@@ -34,18 +34,35 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <!-- Fonte carregada sem bloquear a renderização (display=swap evita texto invisível) -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"></noscript>
 
   <script>
-    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
-    (window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'META_PIXEL_ID');
-    fbq('track', 'PageView');
+    /* Meta Pixel — carregado de forma adiada (só após interação ou ociosidade),
+       para não bloquear o carregamento inicial. Troque META_PIXEL_ID pelo ID real para ativar. */
+    window.__META_PIXEL_ID = 'META_PIXEL_ID';
+    (function () {
+      var loaded = false;
+      function loadPixel() {
+        if (loaded) return;
+        if (!window.__META_PIXEL_ID || window.__META_PIXEL_ID === 'META_PIXEL_ID') return;
+        loaded = true;
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+        (window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', window.__META_PIXEL_ID);
+        fbq('track', 'PageView');
+      }
+      ['pointerdown', 'keydown', 'touchstart', 'scroll'].forEach(function (ev) {
+        window.addEventListener(ev, loadPixel, { once: true, passive: true });
+      });
+      setTimeout(loadPixel, 4000);
+    })();
   </script>
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=META_PIXEL_ID&ev=PageView&noscript=1" alt=""></noscript>
 
   <style>
     :root {
@@ -1707,12 +1724,58 @@
     .reveal-stagger.is-visible > *:nth-child(6) { transition-delay: 600ms; }
     .reveal-stagger.is-visible > *:nth-child(n+7) { transition-delay: 720ms; }
 
+    /* ---------- MICRO-INTERAÇÕES (clicáveis) ---------- */
+    @media (prefers-reduced-motion: no-preference) {
+      .btn:active { transform: translateY(0) scale(.97); }
+
+      .sim-toggle { transition: background .18s, border-color .18s, color .18s, transform .12s ease; }
+      .sim-toggle:hover { transform: translateY(-1px); }
+      .sim-toggle:active { transform: scale(.97); }
+
+      .sim-btn-primary, .sim-btn-secondary { transition: opacity .2s, transform .12s ease, background .2s, color .2s; }
+      .sim-btn-primary:active, .sim-btn-secondary:active { transform: scale(.98); }
+
+      .product-link { transition: transform .18s ease, color .18s ease; }
+      .product-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+      .feature-card:hover { transform: translateY(-4px); border-color: var(--accent-blue); box-shadow: var(--shadow-sm); }
+
+      .nav-links a { position: relative; }
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0; right: 0; bottom: -4px;
+        height: 2px;
+        background: var(--yellow);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform .25s ease;
+      }
+      .nav-links a:hover::after { transform: scaleX(1); }
+
+      summary { transition: color .2s ease; }
+
+      /* FAQ sanfona — abertura/fechamento suave (progressive enhancement) */
+      details::details-content {
+        opacity: 0;
+        transform: translateY(-6px);
+        transition: opacity .3s ease, transform .3s ease, content-visibility .3s allow-discrete;
+      }
+      details[open]::details-content {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ---------- PARALLAX (progressive enhancement) ---------- */
+    .parallax { will-change: transform; }
+
     @media (prefers-reduced-motion: reduce) {
       .reveal, .reveal-stagger > * {
         opacity: 1 !important;
         transform: none !important;
         transition: none !important;
       }
+      .parallax { transform: none !important; }
     }
 
     @media (max-width: 460px) {
@@ -1804,7 +1867,11 @@
           src="assets/logo.png"
           alt="Cota Bem"
           class="brand-logo"
+          width="390"
+          height="111"
           loading="eager"
+          fetchpriority="high"
+          decoding="async"
         >
       </a>
       <nav class="nav-links" aria-label="Navegação principal">
@@ -2043,7 +2110,10 @@
           <img
             src="assets/image-car.webp"
             alt="Veículo moderno representando aquisição via consórcio"
+            width="582"
+            height="481"
             loading="lazy"
+            decoding="async"
           >
         </div>
 
@@ -2075,7 +2145,7 @@
           <article class="product-card">
             <div class="product-image">
               <span class="product-tag">Imóveis</span>
-              <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=900&q=80" alt="Ambiente imobiliário moderno com mesa de planejamento" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=900&q=75" alt="Ambiente imobiliário moderno com mesa de planejamento" width="900" height="619" loading="lazy" decoding="async">
             </div>
             <div class="product-body">
               <h3>Consórcio imobiliário</h3>
@@ -2086,7 +2156,7 @@
           <article class="product-card">
             <div class="product-image">
               <span class="product-tag">Veículos</span>
-              <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=80" alt="Veículo executivo em cenário urbano" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=75" alt="Veículo executivo em cenário urbano" width="900" height="619" loading="lazy" decoding="async">
             </div>
             <div class="product-body">
               <h3>Consórcio de veículos</h3>
@@ -2097,7 +2167,7 @@
           <article class="product-card">
             <div class="product-image">
               <span class="product-tag">Frota &amp; Pesados</span>
-              <img src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&w=900&q=80" alt="Máquina agrícola em operação no campo" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&w=900&q=75" alt="Máquina agrícola em operação no campo" width="900" height="619" loading="lazy" decoding="async">
             </div>
             <div class="product-body">
               <h3>Frota e pesados</h3>
@@ -2232,7 +2302,10 @@
             src="assets/image-portobank.webp"
             alt="Mulher utilizando smartphone — parceria Porto Bank e Cota Bem"
             class="porto-img"
+            width="662"
+            height="658"
             loading="lazy"
+            decoding="async"
           >
         </div>
       </div>
@@ -2282,7 +2355,7 @@
         </div>
 
         <div class="final-cta-visual" aria-hidden="true">
-          <img src="assets/hero-image.webp" alt="Veículo moderno representando aquisição via consórcio" loading="lazy">
+          <img src="assets/hero-image.webp" alt="Veículo moderno representando aquisição via consórcio" width="688" height="543" loading="lazy" decoding="async">
         </div>
       </div>
     </section>
@@ -2296,7 +2369,10 @@
           src="assets/logo.png"
           alt="Cota Bem"
           class="footer-logo"
+          width="390"
+          height="111"
           loading="lazy"
+          decoding="async"
         >
       </a>
       <small>Consórcio com planejamento, método e transparência. Desenvolvido por <a href="https://3ads.com.br/" target="_blank" rel="noopener noreferrer">3ADS</a>.</small>
@@ -2376,6 +2452,55 @@
           });
         });
       });
+    })();
+
+    // ---- PARALLAX SUTIL (progressive enhancement) ----
+    // Move o BLOCO inteiro da imagem (nunca a imagem dentro do recorte),
+    // então não há risco de cortar a composição. Só em telas grandes c/ mouse.
+    (function () {
+      if (!("IntersectionObserver" in window)) return;
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      if (!window.matchMedia("(min-width: 900px) and (pointer: fine)").matches) return;
+
+      var MAX = 18, SPEED = 0.05;
+      var targets = [];
+      document.querySelectorAll(".megastat-visual").forEach(function (el) {
+        el.classList.add("parallax");
+        targets.push(el);
+      });
+      if (!targets.length) return;
+
+      var visible = new Set();
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) visible.add(e.target); else visible.delete(e.target);
+        });
+        schedule();
+      }, { threshold: 0 });
+      targets.forEach(function (el) { io.observe(el); });
+
+      var ticking = false;
+      function schedule() {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+      function update() {
+        ticking = false;
+        var vh = window.innerHeight;
+        targets.forEach(function (el) {
+          if (!visible.has(el)) return;
+          var rect = el.getBoundingClientRect();
+          var center = rect.top + rect.height / 2;
+          var delta = (center - vh / 2) * SPEED;
+          if (delta > MAX) delta = MAX;
+          if (delta < -MAX) delta = -MAX;
+          el.style.transform = "translate3d(0," + (-delta).toFixed(1) + "px,0)";
+        });
+      }
+      window.addEventListener("scroll", schedule, { passive: true });
+      window.addEventListener("resize", schedule, { passive: true });
+      update();
     })();
 
     // ---- SIMULADOR ----
