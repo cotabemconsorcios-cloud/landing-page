@@ -1778,6 +1778,18 @@
       .parallax { transform: none !important; }
     }
 
+    /* Divisórias em onda: o desenho (1920px de largura) só fica bom em telas largas.
+       Abaixo de 900px elas distorcem (viram um "colchete" angular), então usamos
+       transições retas e limpas entre as seções. */
+    @media (max-width: 899px) {
+      .hero-wave,
+      .megastat-top-divider,
+      .megastat-bottom-divider { display: none; }
+
+      .hero { padding-bottom: 0; }
+      .megastat { padding-top: 72px; padding-bottom: 72px; }
+    }
+
     @media (max-width: 460px) {
       .hero-actions .btn,
       .final-cta .btn,
