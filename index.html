@@ -225,12 +225,16 @@
 
     .hero-grid {
       display: grid;
-      gap: 48px;
+      gap: 28px;
       padding: 32px 0 40px;
-      align-items: center;
       position: relative;
       z-index: 1;
     }
+
+    /* Topo: mobile = título, simulador, CTA (ordem do código) */
+    .hero-cta { display: flex; }
+    .hero-cta .btn { width: 100%; }
+    .hero-sim { min-width: 0; }
 
     .eyebrow {
       display: inline-flex;
@@ -748,19 +752,19 @@
     .sim-btn-secondary:hover { background: var(--accent-blue); color: white; }
 
     /* Override final-cta p (branco) — especificidade dupla para ganhar da regra geral */
-    .final-cta .simulator-card p { color: var(--ink); max-width: none; margin-bottom: 0; font-size: inherit; }
+    .simulator-card p { color: var(--ink); max-width: none; margin-bottom: 0; font-size: inherit; }
 
     /* Hierarquia tipográfica do simulador */
     /* 1. Título — maior peso */
-    .final-cta .simulator-card .sim-title {
+    .simulator-card .sim-title {
       font-size: 1.22rem;
       font-weight: 800;
       color: var(--navy-900);
       line-height: 1.25;
     }
     /* 2. Labels/descrições — menor, mais leve */
-    .final-cta .simulator-card .sim-subtitle,
-    .final-cta .simulator-card .sim-section-label {
+    .simulator-card .sim-subtitle,
+    .simulator-card .sim-section-label {
       font-size: .78rem;
       font-weight: 500;
       color: var(--muted);
@@ -768,7 +772,7 @@
       margin-bottom: 10px;
     }
     /* 3. Valor escolhido — grande e bold */
-    .final-cta .simulator-card .sim-value-display {
+    .simulator-card .sim-value-display {
       font-size: 2.4rem;
       font-weight: 800;
       color: var(--navy-900);
@@ -777,7 +781,7 @@
       margin-bottom: 10px;
     }
     /* 4. Nota rodapé — discreta */
-    .final-cta .simulator-card .sim-note {
+    .simulator-card .sim-note {
       font-size: .74rem;
       color: var(--muted);
       text-align: center;
@@ -1564,9 +1568,6 @@
       .container { width: min(var(--max), calc(100% - 48px)); }
       .nav-links { display: flex; }
 
-      .hero-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
-
-      .final-cta-grid,
       .porto-grid {
         grid-template-columns: minmax(0, 1.05fr) minmax(340px, .95fr);
         gap: 64px;
@@ -1608,29 +1609,23 @@
     }
 
     @media (min-width: 900px) {
+      /* Desktop: texto (esq, em cima) + simulador (dir, ocupa as 2 linhas) + CTA (esq, embaixo) */
       .hero-grid {
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-        align-items: center;
-        gap: 0;
-        padding: 32px 0 24px;
+        grid-template-columns: minmax(0, 1fr) minmax(360px, .92fr);
+        grid-template-rows: auto 1fr;
+        grid-template-areas:
+          "text sim"
+          "cta  sim";
+        align-items: start;
+        column-gap: 56px;
+        row-gap: 24px;
+        padding: 48px 0 32px;
       }
 
-      .hero-col-visual {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        align-self: stretch;
-      }
-
-      .hero-car-img {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        max-height: 540px;
-        object-fit: contain;
-        object-position: bottom center;
-      }
+      .hero-text { grid-area: text; align-self: center; }
+      .hero-sim  { grid-area: sim; }
+      .hero-cta  { grid-area: cta; align-self: start; }
+      .hero-cta .btn { width: auto; }
 
       .megastat-grid {
         grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -1819,56 +1814,116 @@
     <!-- ===================== HERO ===================== -->
     <section class="hero" aria-labelledby="hero-title">
       <div class="container">
-        <!-- Linha 1: texto (esq) + imagem (dir) -->
         <div class="hero-grid">
-          <div>
+          <div class="hero-text">
             <span class="eyebrow">Consórcio sem juros · Porto Bank</span>
             <h1 id="hero-title">Compre imóvel, veículo ou frota sem pagar <span class="accent">juros</span> para o banco.</h1>
-            <div class="hero-actions">
-              <a class="btn btn-primary btn-arrow" href="#simulador" data-utm-content="hero_cta">Descobrir a melhor estratégia</a>
-              <a class="btn btn-ghost" href="#metodo">Como funciona</a>
-            </div>
           </div>
 
-          <!-- Coluna direita: imagem do veículo (desktop only) -->
-          <div class="hero-col-visual" aria-hidden="true">
-            <img
-              src="assets/hero-image.webp"
-              alt="Veículo moderno representando aquisição via consórcio"
-              class="hero-car-img"
-              loading="eager"
-            >
+          <!-- Simulador (lado direito no desktop) -->
+          <div class="hero-sim">
+            <div class="simulator-card" id="simulador">
+
+          <!-- STEP 1 — Parâmetros -->
+          <div class="sim-step" id="sim-step-1">
+            <h3 class="sim-title">Chegou a hora de realizar o seu <span>sonho</span></h3>
+            <p class="sim-section-label">Selecione o tipo de bem:</p>
+
+            <div class="sim-toggle-group" id="sim-tipo-bem" role="group" aria-label="Tipo de bem">
+              <button class="sim-toggle" type="button" data-value="imovel">Imóvel</button>
+              <button class="sim-toggle" type="button" data-value="automovel">Automóvel</button>
+              <button class="sim-toggle" type="button" data-value="pesados">Pesados</button>
+            </div>
+
+            <p class="sim-section-label">Tipo de pessoa:</p>
+            <div class="sim-toggle-group" id="sim-tipo-pessoa" role="group" aria-label="Tipo de pessoa">
+              <button class="sim-toggle" type="button" data-value="fisica">Pessoa Física</button>
+              <button class="sim-toggle" type="button" data-value="juridica">Pessoa Jurídica</button>
+            </div>
+
+            <div id="sim-slider-wrap" class="sim-slider-wrap is-blurred">
+              <p class="sim-section-label">Escolha o valor do crédito:</p>
+              <p class="sim-value-display">R$ <span id="sim-value-txt">140.000,00</span></p>
+              <input class="sim-range" type="range" id="sim-range" min="140000" max="1000000" step="10000" value="140000" aria-label="Valor do crédito">
+              <div class="sim-range-labels">
+                <span id="sim-range-min">R$ 140.000,00</span>
+                <span id="sim-range-max">R$ 1.000.000,00</span>
+              </div>
+            </div>
+
+            <p class="sim-error" id="sim-error" style="display:none;">Selecione os itens acima para simular</p>
+            <button class="sim-btn-primary" id="sim-btn-simular" type="button">SIMULAR AGORA</button>
+            <p class="sim-note">Crédito mínimo: R$ 140.000,00</p>
+          </div>
+
+          <!-- STEP 2 — Dados de contato + prévia bloqueada -->
+          <div class="sim-step" id="sim-step-2" style="display:none;">
+            <h3 class="sim-title">Sua parcela está <span>quase pronta</span></h3>
+
+            <div class="sim-preview-locked" aria-hidden="true">
+              <p class="sim-preview-label">Parcela com redução de <strong id="sim-preview-reducao">35%</strong></p>
+              <div class="sim-preview-value-wrap">
+                <span class="sim-preview-value">R$ 0.000,00</span>
+                <span class="sim-preview-lock">🔒</span>
+              </div>
+              <p class="sim-preview-hint">Preencha os dados abaixo para liberar o valor</p>
+            </div>
+
+            <div class="sim-resumo">
+              <span><strong id="sim-resumo-bem">—</strong></span>
+              <span>Crédito: <strong id="sim-resumo-valor">—</strong></span>
+            </div>
+
+            <p class="sim-subtitle">Um consultor entrará em contato para detalhar a condição:</p>
+            <div class="sim-field">
+              <input type="text" id="sim-nome" placeholder="Seu nome completo" autocomplete="name">
+            </div>
+            <div class="sim-field">
+              <input type="tel" id="sim-whatsapp" placeholder="Seu WhatsApp (com DDD)" autocomplete="tel">
+            </div>
+            <div class="sim-field">
+              <input type="email" id="sim-email" placeholder="Seu e-mail" autocomplete="email">
+            </div>
+            <!-- Honeypot anti-spam: invisível para humanos, robôs tendem a preencher -->
+            <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">
+              <input type="text" id="sim-website" name="website" tabindex="-1" autocomplete="off">
+            </div>
+            <div class="sim-lgpd-field">
+              <input type="checkbox" id="sim-lgpd">
+              <label for="sim-lgpd">Autorizo o contato da Cota Bem e o tratamento dos meus dados conforme a <a href="#">Política de Privacidade</a>.</label>
+            </div>
+            <button class="sim-btn-primary" id="sim-btn-enviar" type="button">Revelar minha parcela →</button>
+            <button class="sim-btn-back" id="sim-btn-voltar" type="button">← Voltar</button>
+          </div>
+
+          <!-- STEP 3 — Resultado revelado + confirmação -->
+          <div class="sim-step sim-success-wrap" id="sim-step-3" style="display:none;">
+            <div class="sim-check-icon" aria-hidden="true">✓</div>
+            <h3 class="sim-success-title">Sua parcela com redução <span>foi liberada</span></h3>
+
+            <div class="sim-parcela-box">
+              <p class="sim-parcela-label">Parcela mensal estimada:</p>
+              <p class="sim-parcela-original" id="sim-parcela-sem">—</p>
+              <p class="sim-parcela-final" id="sim-parcela-com">—</p>
+            </div>
+
+            <div class="sim-condicoes" id="sim-condicoes">
+              <div class="sim-condicoes-row"><span>Crédito</span><strong id="sim-cond-credito">—</strong></div>
+              <div class="sim-condicoes-row"><span>Prazo</span><strong id="sim-cond-prazo">—</strong></div>
+              <div class="sim-condicoes-row"><span>Redução na parcela</span><strong id="sim-cond-reducao">—</strong></div>
+              <div class="sim-condicoes-row"><span>Taxa adm</span><strong id="sim-cond-taxa">—</strong></div>
+            </div>
+
+            <p class="sim-success-text" style="margin-top:16px;">Um consultor da Cota Bem entrará em contato em até <strong>24 horas</strong> para detalhar essa condição e tirar suas dúvidas.</p>
+
+            <p class="sim-disclaimer">Valores ilustrativos baseados na campanha Porto Bank vigente. Sujeitos a análise de crédito, disponibilidade de cotas e regulamento da administradora. Ofertas válidas até 31/05/2026.</p>
           </div>
         </div>
+          </div>
 
-        <!-- Linha 2: stats abaixo das duas colunas (full width) -->
-        <div class="hero-stats" aria-label="Resultados Cota Bem">
-          <div class="hero-stat">
-            <span class="hero-stat-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-            </span>
-            <div class="hero-stat-text">
-              <strong>+500</strong>
-              <span>clientes atendidos</span>
-            </div>
-          </div>
-          <div class="hero-stat">
-            <span class="hero-stat-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-            </span>
-            <div class="hero-stat-text">
-              <strong>R$ 120mi</strong>
-              <span>em créditos planejados</span>
-            </div>
-          </div>
-          <div class="hero-stat">
-            <span class="hero-stat-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-            </span>
-            <div class="hero-stat-text">
-              <strong>9.8/10</strong>
-              <span>satisfação na consultoria</span>
-            </div>
+          <!-- CTA WhatsApp -->
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="https://wa.me/5562998596663?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Cota%20Bem%20e%20gostaria%20de%20falar%20com%20um%20consultor%20sobre%20cons%C3%B3rcio.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer">Fale com um consultor</a>
           </div>
         </div>
       </div>
@@ -2216,106 +2271,7 @@
           <span class="eyebrow">Próximo passo</span>
           <h2 id="cta-title" style="margin-top:22px;">Quer saber se o consórcio faz sentido para o que você quer <span class="accent">comprar?</span></h2>
           <p>Uma conversa de 15 minutos é suficiente para entender grupo, prazo e estratégia de lance. Sem pressão, sem compromisso de compra.</p>
-        </div>
-
-        <!-- SIMULADOR INTERATIVO -->
-        <div class="simulator-card" id="simulador">
-          <div class="sim-badge" aria-hidden="true">40% Redutor</div>
-
-          <!-- STEP 1 — Parâmetros -->
-          <div class="sim-step" id="sim-step-1">
-            <h3 class="sim-title">Chegou a hora de realizar o seu <span>sonho</span></h3>
-            <p class="sim-section-label">Selecione o tipo de bem:</p>
-
-            <div class="sim-toggle-group" id="sim-tipo-bem" role="group" aria-label="Tipo de bem">
-              <button class="sim-toggle" type="button" data-value="imovel">Imóvel</button>
-              <button class="sim-toggle" type="button" data-value="automovel">Automóvel</button>
-              <button class="sim-toggle" type="button" data-value="pesados">Pesados</button>
-            </div>
-
-            <p class="sim-section-label">Tipo de pessoa:</p>
-            <div class="sim-toggle-group" id="sim-tipo-pessoa" role="group" aria-label="Tipo de pessoa">
-              <button class="sim-toggle" type="button" data-value="fisica">Pessoa Física</button>
-              <button class="sim-toggle" type="button" data-value="juridica">Pessoa Jurídica</button>
-            </div>
-
-            <div id="sim-slider-wrap" class="sim-slider-wrap is-blurred">
-              <p class="sim-section-label">Escolha o valor do crédito:</p>
-              <p class="sim-value-display">R$ <span id="sim-value-txt">140.000,00</span></p>
-              <input class="sim-range" type="range" id="sim-range" min="140000" max="1000000" step="10000" value="140000" aria-label="Valor do crédito">
-              <div class="sim-range-labels">
-                <span id="sim-range-min">R$ 140.000,00</span>
-                <span id="sim-range-max">R$ 1.000.000,00</span>
-              </div>
-            </div>
-
-            <p class="sim-error" id="sim-error" style="display:none;">Selecione os itens acima para simular</p>
-            <button class="sim-btn-primary" id="sim-btn-simular" type="button">SIMULAR AGORA</button>
-            <p class="sim-note">Crédito mínimo: R$ 140.000,00</p>
-          </div>
-
-          <!-- STEP 2 — Dados de contato + prévia bloqueada -->
-          <div class="sim-step" id="sim-step-2" style="display:none;">
-            <h3 class="sim-title">Sua parcela está <span>quase pronta</span></h3>
-
-            <div class="sim-preview-locked" aria-hidden="true">
-              <p class="sim-preview-label">Parcela com redução de <strong id="sim-preview-reducao">35%</strong></p>
-              <div class="sim-preview-value-wrap">
-                <span class="sim-preview-value">R$ 0.000,00</span>
-                <span class="sim-preview-lock">🔒</span>
-              </div>
-              <p class="sim-preview-hint">Preencha os dados abaixo para liberar o valor</p>
-            </div>
-
-            <div class="sim-resumo">
-              <span><strong id="sim-resumo-bem">—</strong></span>
-              <span>Crédito: <strong id="sim-resumo-valor">—</strong></span>
-            </div>
-
-            <p class="sim-subtitle">Um consultor entrará em contato para detalhar a condição:</p>
-            <div class="sim-field">
-              <input type="text" id="sim-nome" placeholder="Seu nome completo" autocomplete="name">
-            </div>
-            <div class="sim-field">
-              <input type="tel" id="sim-whatsapp" placeholder="Seu WhatsApp (com DDD)" autocomplete="tel">
-            </div>
-            <div class="sim-field">
-              <input type="email" id="sim-email" placeholder="Seu e-mail" autocomplete="email">
-            </div>
-            <!-- Honeypot anti-spam: invisível para humanos, robôs tendem a preencher -->
-            <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">
-              <input type="text" id="sim-website" name="website" tabindex="-1" autocomplete="off">
-            </div>
-            <div class="sim-lgpd-field">
-              <input type="checkbox" id="sim-lgpd">
-              <label for="sim-lgpd">Autorizo o contato da Cota Bem e o tratamento dos meus dados conforme a <a href="#">Política de Privacidade</a>.</label>
-            </div>
-            <button class="sim-btn-primary" id="sim-btn-enviar" type="button">Revelar minha parcela →</button>
-            <button class="sim-btn-back" id="sim-btn-voltar" type="button">← Voltar</button>
-          </div>
-
-          <!-- STEP 3 — Resultado revelado + confirmação -->
-          <div class="sim-step sim-success-wrap" id="sim-step-3" style="display:none;">
-            <div class="sim-check-icon" aria-hidden="true">✓</div>
-            <h3 class="sim-success-title">Sua parcela com redução <span>foi liberada</span></h3>
-
-            <div class="sim-parcela-box">
-              <p class="sim-parcela-label">Parcela mensal estimada:</p>
-              <p class="sim-parcela-original" id="sim-parcela-sem">—</p>
-              <p class="sim-parcela-final" id="sim-parcela-com">—</p>
-            </div>
-
-            <div class="sim-condicoes" id="sim-condicoes">
-              <div class="sim-condicoes-row"><span>Crédito</span><strong id="sim-cond-credito">—</strong></div>
-              <div class="sim-condicoes-row"><span>Prazo</span><strong id="sim-cond-prazo">—</strong></div>
-              <div class="sim-condicoes-row"><span>Redução na parcela</span><strong id="sim-cond-reducao">—</strong></div>
-              <div class="sim-condicoes-row"><span>Taxa adm</span><strong id="sim-cond-taxa">—</strong></div>
-            </div>
-
-            <p class="sim-success-text" style="margin-top:16px;">Um consultor da Cota Bem entrará em contato em até <strong>24 horas</strong> para detalhar essa condição e tirar suas dúvidas.</p>
-
-            <p class="sim-disclaimer">Valores ilustrativos baseados na campanha Porto Bank vigente. Sujeitos a análise de crédito, disponibilidade de cotas e regulamento da administradora. Ofertas válidas até 31/05/2026.</p>
-          </div>
+          <a class="btn btn-primary" href="https://wa.me/5562998596663?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Cota%20Bem%20e%20gostaria%20de%20falar%20com%20um%20consultor%20sobre%20cons%C3%B3rcio.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer">Fale com um consultor</a>
         </div>
       </div>
     </section>
